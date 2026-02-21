@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Set Up OpenClaw on a VPS: Complete 2026 Guide | GetClawHelp</title>
+<meta name="description" content="Step-by-step guide to installing OpenClaw on a VPS in 2026. Covers VPS selection, installation, configuration, and first skills setup.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://getclawhelp.com/blog/openclaw-vps-setup-guide/">
+<meta property="og:title" content="How to Set Up OpenClaw on a VPS: Complete 2026 Guide">
+<meta property="og:description" content="Step-by-step guide to installing OpenClaw on a VPS in 2026. Covers VPS selection, installation, configuration, and first skills setup.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://getclawhelp.com/blog/openclaw-vps-setup-guide/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to Set Up OpenClaw on a VPS: Complete 2026 Guide",
+  "description": "Step-by-step guide to installing OpenClaw on a VPS in 2026.",
+  "datePublished": "2026-02-21",
+  "dateModified": "2026-02-21",
+  "author": {"@type": "Organization", "name": "GetClawHelp"},
+  "publisher": {"@type": "Organization", "name": "GetClawHelp"},
+  "mainEntityOfPage": "https://getclawhelp.com/blog/openclaw-vps-setup-guide/"
+}
+</script>
+<style>
+:root{--deep:#0B1D1A;--moss:#1B4D3E;--sage:#5B8A72;--mist:#A8C5B8;--cloud:#E8F0EB;--snow:#F7FAF8;--gold:#C8963E;--gold-light:#E8C87A;--font-display:'Source Serif 4','Times New Roman',serif;--font-body:'Outfit',system-ui,sans-serif;--radius:14px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--cloud);background:var(--deep);-webkit-font-smoothing:antialiased}
+.container{max-width:1200px;margin:0 auto;padding:0 clamp(1.5rem,5vw,4rem)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.25rem 0;background:rgba(11,29,26,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(168,197,184,0.08)}
+nav .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:var(--font-display);font-weight:700;font-size:1.5rem;color:var(--snow);text-decoration:none}
+.logo .accent{color:var(--gold)}
+.nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
+.nav-links a{font-weight:500;font-size:0.9rem;color:var(--mist);text-decoration:none;transition:color 0.25s}
+.nav-links a:hover{color:var(--snow)}
+.nav-cta{font-weight:600;font-size:0.85rem;color:var(--deep);background:var(--gold);padding:0.6rem 1.4rem;border-radius:var(--radius);transition:background 0.25s}
+.nav-cta:hover{background:var(--gold-light)}
+.mobile-menu-btn{display:none;background:none;border:none;cursor:pointer;padding:0.5rem}
+.mobile-menu-btn span{display:block;width:24px;height:2px;background:var(--mist);margin:5px 0}
+
+.article{max-width:720px;margin:0 auto;padding:8rem 1.5rem 4rem}
+.article-meta{font-size:0.85rem;color:var(--sage);margin-bottom:1.5rem}
+.article h1{font-family:var(--font-display);font-weight:700;font-size:clamp(2rem,4vw,2.8rem);color:var(--snow);line-height:1.15;margin-bottom:2rem}
+.article h2{font-family:var(--font-display);font-weight:600;font-size:1.5rem;color:var(--snow);margin:2.5rem 0 1rem;padding-top:1rem;border-top:1px solid rgba(168,197,184,0.08)}
+.article h3{font-family:var(--font-display);font-weight:600;font-size:1.2rem;color:var(--snow);margin:2rem 0 0.75rem}
+.article p{font-weight:300;font-size:1.05rem;line-height:1.75;color:var(--mist);margin-bottom:1.25rem}
+.article ul,.article ol{margin:0 0 1.25rem 1.5rem;color:var(--mist);font-weight:300;font-size:1.05rem;line-height:1.75}
+.article li{margin-bottom:0.5rem}
+.article code{background:rgba(27,77,62,0.2);padding:0.15rem 0.4rem;border-radius:4px;font-size:0.9rem;color:var(--gold-light)}
+.article pre{background:rgba(27,77,62,0.15);border:1px solid rgba(168,197,184,0.08);border-radius:var(--radius);padding:1.5rem;overflow-x:auto;margin-bottom:1.25rem;font-size:0.9rem;line-height:1.6;color:var(--cloud)}
+.article pre code{background:none;padding:0;color:inherit}
+.article strong{font-weight:600;color:var(--cloud)}
+.article a{color:var(--gold);text-decoration:underline;text-underline-offset:3px}
+.article a:hover{color:var(--gold-light)}
+.article blockquote{border-left:3px solid var(--gold);padding:1rem 1.5rem;margin:1.5rem 0;background:rgba(200,150,62,0.04);border-radius:0 var(--radius) var(--radius) 0}
+.article blockquote p{margin:0;color:var(--cloud)}
+
+.cta-box{background:rgba(200,150,62,0.06);border:1px solid var(--gold);border-radius:var(--radius);padding:2rem;text-align:center;margin:3rem 0}
+.cta-box h3{font-family:var(--font-display);font-weight:600;font-size:1.3rem;color:var(--snow);margin-bottom:0.75rem}
+.cta-box p{font-weight:300;color:var(--mist);margin-bottom:1.25rem}
+.cta-btn{display:inline-flex;align-items:center;gap:0.5rem;font-family:var(--font-body);font-weight:600;font-size:1rem;color:var(--deep);background:var(--gold);padding:0.9rem 2rem;border-radius:var(--radius);text-decoration:none;transition:background 0.25s,transform 0.2s}
+.cta-btn:hover{background:var(--gold-light);transform:translateY(-2px)}
+
+.related{margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(168,197,184,0.08)}
+.related h3{font-family:var(--font-display);font-weight:600;font-size:1.2rem;color:var(--snow);margin-bottom:1rem}
+.related a{display:block;color:var(--gold);text-decoration:none;padding:0.5rem 0;font-size:0.95rem;transition:color 0.25s}
+.related a:hover{color:var(--gold-light)}
+
+footer{padding:3rem 0;border-top:1px solid rgba(168,197,184,0.08)}
+footer .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-links{display:flex;gap:2rem;list-style:none}
+.footer-links a{font-size:0.85rem;color:var(--sage);text-decoration:none}
+.footer-links a:hover{color:var(--snow)}
+.footer-copy{font-size:0.8rem;color:rgba(168,197,184,0.4)}
+
+@media(max-width:768px){
+  .nav-links{display:none}
+  .mobile-menu-btn{display:block}
+  nav.open .nav-links{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(11,29,26,0.95);padding:1.5rem;gap:1rem}
+  footer .container{flex-direction:column;text-align:center}
+  .footer-links{justify-content:center}
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="container">
+    <a href="/" class="logo">Get<span class="accent">Claw</span>Help</a>
+    <ul class="nav-links">
+      <li><a href="/#pricing">Pricing</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="https://calendly.com/sapientaai/1-1-to-install-openclaw" class="nav-cta">Book Your Time</a></li>
+    </ul>
+    <button class="mobile-menu-btn" onclick="this.closest('nav').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<article class="article">
+  <div class="article-meta">February 21, 2026 · 12 min read · <a href="/blog/">← Back to Blog</a></div>
+  <h1>How to Set Up OpenClaw on a VPS: Complete 2026 Guide</h1>
+
+  <p>Running <a href="/">OpenClaw</a> on a VPS means your AI assistant is always online — 24/7, no laptop required. This guide walks you through every step: picking a VPS provider, installing OpenClaw, configuring your first skills, and connecting your integrations.</p>
+
+  <h2>Why Run OpenClaw on a VPS?</h2>
+  <p>A Virtual Private Server gives your OpenClaw instance a permanent, always-on home. Unlike running it on your laptop, a VPS stays online even when your computer is off. Your automations trigger on schedule, messages get answered instantly, and your data stays on a server you control.</p>
+  <p>Key advantages:</p>
+  <ul>
+    <li><strong>24/7 uptime</strong> — your assistant never sleeps</li>
+    <li><strong>Data privacy</strong> — everything stays on your server</li>
+    <li><strong>Full control</strong> — install any skill, any integration</li>
+    <li><strong>Low cost</strong> — VPS hosting starts at $5-10/month</li>
+  </ul>
+
+  <h2>Step 1: Choose Your VPS Provider</h2>
+  <p>OpenClaw runs great on any Linux VPS. Here are the most popular options in 2026:</p>
+
+  <h3>Recommended Providers</h3>
+  <ul>
+    <li><strong>Hetzner</strong> — Best value. Their CX22 plan ($4.85/mo) gives you 2 vCPU, 4GB RAM, 40GB SSD. More than enough for OpenClaw.</li>
+    <li><strong>DigitalOcean</strong> — Developer-friendly. The $6/mo droplet (1 vCPU, 1GB RAM) works for basic setups; upgrade to $12/mo for heavier workloads.</li>
+    <li><strong>Contabo</strong> — Maximum resources for the price. Their VPS S plan gives you 4 vCPU and 8GB RAM for under $7/mo.</li>
+    <li><strong>Vultr</strong> — Good global coverage. The $6/mo plan is solid for most use cases.</li>
+  </ul>
+
+  <h3>Minimum Requirements</h3>
+  <ul>
+    <li>1 vCPU (2+ recommended)</li>
+    <li>1GB RAM (2GB+ recommended)</li>
+    <li>20GB storage</li>
+    <li>Ubuntu 22.04 or 24.04 LTS</li>
+  </ul>
+
+  <h2>Step 2: Initial Server Setup</h2>
+  <p>Once your VPS is provisioned, SSH into it:</p>
+  <pre><code>ssh root@your-server-ip</code></pre>
+
+  <p>Update the system and create a non-root user:</p>
+  <pre><code>apt update && apt upgrade -y
+adduser openclaw
+usermod -aG sudo openclaw
+su - openclaw</code></pre>
+
+  <h3>Install Node.js</h3>
+  <p>OpenClaw requires Node.js 20 or later:</p>
+  <pre><code>curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+sudo apt install -y nodejs
+node --version  # Should show v20.x or later</code></pre>
+
+  <h2>Step 3: Install OpenClaw</h2>
+  <p>With Node.js installed, grab OpenClaw:</p>
+  <pre><code>npm install -g openclaw
+openclaw init</code></pre>
+
+  <p>The <code>init</code> command walks you through initial configuration — setting your AI provider API key, choosing your default model, and configuring your first channel (Slack, Discord, Telegram, etc.).</p>
+
+  <h2>Step 4: Configure Your First Skills</h2>
+  <p>Skills are what make OpenClaw useful. They're modular capabilities you can add:</p>
+  <pre><code>openclaw skill install web-search
+openclaw skill install calendar
+openclaw skill install email-assistant
+openclaw skill install file-manager</code></pre>
+
+  <p>Each skill comes with its own configuration. The setup wizard guides you through connecting APIs and setting preferences.</p>
+
+  <h2>Step 5: Set Up Process Management</h2>
+  <p>You want OpenClaw to restart automatically if it crashes or if your server reboots:</p>
+  <pre><code>sudo npm install -g pm2
+pm2 start openclaw -- start
+pm2 save
+pm2 startup</code></pre>
+
+  <p>Now OpenClaw will survive reboots and auto-restart on crashes.</p>
+
+  <h2>Step 6: Secure Your Server</h2>
+  <p>Basic security hardening:</p>
+  <ul>
+    <li>Set up SSH key authentication and disable password login</li>
+    <li>Configure a firewall with <code>ufw</code></li>
+    <li>Enable automatic security updates</li>
+    <li>Consider setting up a reverse proxy with Nginx + SSL</li>
+  </ul>
+  <pre><code>sudo ufw allow OpenSSH
+sudo ufw enable
+sudo apt install unattended-upgrades -y</code></pre>
+
+  <h2>Step 7: Connect Your Integrations</h2>
+  <p>The real power of OpenClaw comes from connecting it to your tools:</p>
+  <ul>
+    <li><strong>Messaging</strong> — Slack, Discord, Telegram, WhatsApp</li>
+    <li><strong>Calendar</strong> — Google Calendar, Outlook</li>
+    <li><strong>Email</strong> — Gmail, IMAP/SMTP</li>
+    <li><strong>Productivity</strong> — Notion, Linear, GitHub</li>
+    <li><strong>Custom</strong> — Any API via custom skills</li>
+  </ul>
+
+  <p>Each integration is configured through OpenClaw's config file or the setup wizard.</p>
+
+  <h2>Common Issues &amp; Troubleshooting</h2>
+  <h3>Out of memory</h3>
+  <p>If you're on a 1GB VPS and seeing crashes, add swap space:</p>
+  <pre><code>sudo fallocate -l 2G /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab</code></pre>
+
+  <h3>Port conflicts</h3>
+  <p>If another service is using the same port, change OpenClaw's port in the config or stop the conflicting service.</p>
+
+  <h3>API rate limits</h3>
+  <p>If you're hitting rate limits from your AI provider, consider using multiple API keys or switching to a provider with higher limits.</p>
+
+  <h2>Next Steps</h2>
+  <p>Now that OpenClaw is running, check out our other guides:</p>
+  <ul>
+    <li><a href="/blog/openclaw-automation-ideas/">5 Things to Automate First with OpenClaw</a></li>
+    <li><a href="/blog/openclaw-vs-chatgpt/">OpenClaw vs ChatGPT: Which Should You Use?</a></li>
+  </ul>
+
+  <div class="cta-box">
+    <h3>Skip the Setup — We'll Do It for You</h3>
+    <p>Don't want to deal with command lines and configuration? Book a 1-on-1 call and we'll install OpenClaw on your VPS in 30 minutes.</p>
+    <a href="https://calendly.com/sapientaai/1-1-to-install-openclaw" class="cta-btn">Book Your Time →</a>
+  </div>
+
+  <div class="related">
+    <h3>Related Posts</h3>
+    <a href="/blog/openclaw-vs-chatgpt/">OpenClaw vs ChatGPT: Which AI Assistant Should You Use?</a>
+    <a href="/blog/openclaw-automation-ideas/">5 Things to Automate First with OpenClaw</a>
+  </div>
+</article>
+
+<footer>
+  <div class="container">
+    <ul class="footer-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/#pricing">Pricing</a></li>
+    </ul>
+    <span class="footer-copy">&copy; 2026 GetClawHelp. All rights reserved.</span>
+  </div>
+</footer>
+</body>
+</html>

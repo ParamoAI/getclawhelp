@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog | GetClawHelp — OpenClaw Guides &amp; Tips</title>
+<meta name="description" content="Guides, tutorials, and tips for getting the most out of OpenClaw. VPS setup, automation ideas, and comparisons.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://getclawhelp.com/blog/">
+<meta property="og:title" content="Blog | GetClawHelp">
+<meta property="og:description" content="Guides, tutorials, and tips for getting the most out of OpenClaw.">
+<link rel="canonical" href="https://getclawhelp.com/blog/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--deep:#0B1D1A;--moss:#1B4D3E;--sage:#5B8A72;--mist:#A8C5B8;--cloud:#E8F0EB;--snow:#F7FAF8;--gold:#C8963E;--gold-light:#E8C87A;--font-display:'Source Serif 4','Times New Roman',serif;--font-body:'Outfit',system-ui,sans-serif;--radius:14px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--cloud);background:var(--deep);-webkit-font-smoothing:antialiased}
+.container{max-width:1200px;margin:0 auto;padding:0 clamp(1.5rem,5vw,4rem)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.25rem 0;background:rgba(11,29,26,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(168,197,184,0.08)}
+nav .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:var(--font-display);font-weight:700;font-size:1.5rem;color:var(--snow);text-decoration:none}
+.logo .accent{color:var(--gold)}
+.nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
+.nav-links a{font-weight:500;font-size:0.9rem;color:var(--mist);text-decoration:none;transition:color 0.25s}
+.nav-links a:hover{color:var(--snow)}
+.nav-cta{font-weight:600;font-size:0.85rem;color:var(--deep);background:var(--gold);padding:0.6rem 1.4rem;border-radius:var(--radius);transition:background 0.25s}
+.nav-cta:hover{background:var(--gold-light)}
+.mobile-menu-btn{display:none;background:none;border:none;cursor:pointer;padding:0.5rem}
+.mobile-menu-btn span{display:block;width:24px;height:2px;background:var(--mist);margin:5px 0}
+
+.page-header{padding:8rem 0 4rem;text-align:center}
+.page-header h1{font-family:var(--font-display);font-weight:700;font-size:clamp(2rem,4vw,3rem);color:var(--snow);margin-bottom:1rem}
+.page-header p{font-weight:300;font-size:1.1rem;color:var(--mist);max-width:560px;margin:0 auto}
+
+.posts-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:1.5rem;padding-bottom:6rem}
+.post-card{background:rgba(27,77,62,0.08);border:1px solid rgba(168,197,184,0.08);border-radius:var(--radius);padding:2.2rem;transition:border-color 0.3s,transform 0.3s;text-decoration:none;display:block}
+.post-card:hover{border-color:rgba(200,150,62,0.15);transform:translateY(-4px)}
+.post-meta{font-size:0.8rem;color:var(--sage);margin-bottom:0.75rem}
+.post-card h2{font-family:var(--font-display);font-weight:600;font-size:1.25rem;color:var(--snow);margin-bottom:0.75rem;line-height:1.3}
+.post-card p{font-weight:300;font-size:0.95rem;line-height:1.6;color:var(--mist)}
+
+footer{padding:3rem 0;border-top:1px solid rgba(168,197,184,0.08)}
+footer .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-links{display:flex;gap:2rem;list-style:none}
+.footer-links a{font-size:0.85rem;color:var(--sage);text-decoration:none;transition:color 0.25s}
+.footer-links a:hover{color:var(--snow)}
+.footer-copy{font-size:0.8rem;color:rgba(168,197,184,0.4)}
+
+@media(max-width:768px){
+  .nav-links{display:none}
+  .mobile-menu-btn{display:block}
+  nav.open .nav-links{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(11,29,26,0.95);padding:1.5rem;gap:1rem}
+  footer .container{flex-direction:column;text-align:center}
+  .footer-links{justify-content:center}
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="container">
+    <a href="/" class="logo">Get<span class="accent">Claw</span>Help</a>
+    <ul class="nav-links">
+      <li><a href="/#pricing">Pricing</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="https://calendly.com/sapientaai/1-1-to-install-openclaw" class="nav-cta">Book Your Time</a></li>
+    </ul>
+    <button class="mobile-menu-btn" onclick="this.closest('nav').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="container">
+    <h1>Blog</h1>
+    <p>Guides, tutorials, and tips for getting the most out of OpenClaw.</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="posts-grid">
+
+    <a href="/blog/openclaw-vps-setup-guide/" class="post-card">
+      <div class="post-meta">February 21, 2026 · 12 min read</div>
+      <h2>How to Set Up OpenClaw on a VPS: Complete 2026 Guide</h2>
+      <p>Everything you need to know about choosing a VPS, installing OpenClaw, and configuring your first skills. Step-by-step walkthrough.</p>
+    </a>
+
+    <a href="/blog/openclaw-vs-chatgpt/" class="post-card">
+      <div class="post-meta">February 21, 2026 · 8 min read</div>
+      <h2>OpenClaw vs ChatGPT: Which AI Assistant Should You Use?</h2>
+      <p>A practical comparison of OpenClaw and ChatGPT — privacy, customization, self-hosting, and when to use each one.</p>
+    </a>
+
+    <a href="/blog/openclaw-automation-ideas/" class="post-card">
+      <div class="post-meta">February 21, 2026 · 7 min read</div>
+      <h2>5 Things to Automate First with OpenClaw</h2>
+      <p>The most impactful automations to set up on day one: email, calendar, research, content, and workflow management.</p>
+    </a>
+
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <ul class="footer-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/#pricing">Pricing</a></li>
+      <li><a href="https://calendly.com/sapientaai/1-1-to-install-openclaw">Book a Call</a></li>
+    </ul>
+    <span class="footer-copy">&copy; 2026 GetClawHelp. All rights reserved.</span>
+  </div>
+</footer>
+</body>
+</html>
