@@ -1,694 +1,936 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OpenClaw VPS Setup &amp; Installation | GetClawHelp</title>
-<meta name="description" content="Professional OpenClaw VPS setup and installation service. We install OpenClaw on your server in a 1-on-1 call — no coding required. Skills pre-installed, runs 24/7.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://getclawhelp.com">
-<meta property="og:title" content="OpenClaw VPS Setup & Installation | GetClawHelp">
-<meta property="og:description" content="Professional OpenClaw VPS setup and installation service. We install OpenClaw on your server in a 1-on-1 call — no coding required.">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="OpenClaw VPS Setup & Installation | GetClawHelp">
-<meta name="twitter:description" content="Professional OpenClaw VPS setup and installation service. No coding required.">
-<link rel="canonical" href="https://getclawhelp.com/">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "GetClawHelp",
-  "url": "https://getclawhelp.com",
-  "description": "Professional OpenClaw VPS setup and installation service.",
-  "sameAs": []
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "OpenClaw VPS Setup & Installation",
-  "provider": {
-    "@type": "Organization",
-    "name": "GetClawHelp"
-  },
-  "description": "We install OpenClaw on your VPS in a 1-on-1 call. No coding required. Skills pre-installed, runs 24/7.",
-  "url": "https://getclawhelp.com",
-  "offers": [
+    <meta charset="UTF-8">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17920782524"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17920782524');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenClaw VPS Setup & Installation Service | GetClawHelp</title>
+    
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://getclawhelp.com/">
+    <meta property="og:title" content="OpenClaw VPS Setup & Installation | GetClawHelp">
+    <meta property="og:description" content="Professional OpenClaw VPS setup service. We install OpenClaw on your server, configure skills, and connect your LLM — no coding required.">
+    <meta property="og:image" content="https://getclawhelp.com/og-image.png">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="OpenClaw VPS Setup & Installation | GetClawHelp">
+    <meta name="twitter:description" content="Professional OpenClaw VPS setup service. We install OpenClaw on your server, configure skills, and connect your LLM — no coding required.">
+    <meta name="twitter:image" content="https://getclawhelp.com/og-image.png">
+    <meta name="twitter:site" content="@tipbtdennis">
+    
+    <!-- General Meta -->
+    <meta name="description" content="Professional OpenClaw VPS setup and installation service. We install OpenClaw on your server in a 1-on-1 call — no coding required. Skills pre-installed, runs 24/7.">
+    <meta name="keywords" content="OpenClaw setup, OpenClaw VPS install, OpenClaw help, install OpenClaw, OpenClaw server setup, OpenClaw installation service, OpenClaw skills, OpenClaw configuration, AI assistant VPS, self-hosted AI assistant">
+    <link rel="canonical" href="https://getclawhelp.com/">
+    
+    <!-- Structured Data: Organization -->
+    <script type="application/ld+json">
     {
-      "@type": "Offer",
-      "name": "Monthly Maintenance",
-      "price": "97",
-      "priceCurrency": "USD",
-      "priceSpecification": {
-        "@type": "UnitPriceSpecification",
-        "billingDuration": "P1M"
-      }
-    },
-    {
-      "@type": "Offer",
-      "name": "One-Time Setup",
-      "price": "119",
-      "priceCurrency": "USD"
-    },
-    {
-      "@type": "Offer",
-      "name": "Premium Setup",
-      "price": "229",
-      "priceCurrency": "USD"
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "GetClawHelp",
+      "url": "https://getclawhelp.com",
+      "logo": "https://getclawhelp.com/og-image.png",
+      "description": "Professional OpenClaw VPS setup and installation service.",
+      "sameAs": [
+        "https://x.com/tipbtdennis",
+        "https://www.skool.com/getclawhelp-4571/about"
+      ]
     }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+    </script>
+
+    <!-- Structured Data: Service -->
+    <script type="application/ld+json">
     {
-      "@type": "Question",
-      "name": "What is OpenClaw?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "OpenClaw is an open-source AI assistant that runs on your own server, giving you full control over your data and automations."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do I need coding experience?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. We handle all the technical setup in a 1-on-1 call. You just need a VPS and 30 minutes."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Why use a VPS instead of running locally?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A VPS runs 24/7 so your AI assistant is always online, even when your computer is off. Your data stays on your own server."
-      }
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "OpenClaw VPS Installation and Setup",
+      "provider": {
+        "@type": "Organization",
+        "name": "GetClawHelp",
+        "url": "https://getclawhelp.com"
+      },
+      "name": "OpenClaw VPS Setup Service",
+      "description": "We install and configure OpenClaw on your VPS in a live 1-on-1 call. No coding required. Includes skills installation, LLM configuration, and ongoing support.",
+      "url": "https://getclawhelp.com/"
     }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
+    </script>
+
+    <!-- Structured Data: FAQPage -->
+    <script type="application/ld+json">
     {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://getclawhelp.com/"
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is OpenClaw?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "OpenClaw is an open-source personal AI assistant that runs on your own server. It connects to WhatsApp, Telegram, Slack, Discord, and other messaging platforms to automate tasks like email management, calendar scheduling, and workflow automation — all running 24/7 on hardware you control."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need coding experience to use OpenClaw?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. With GetClawHelp, we handle the entire installation and configuration for you in a live 1-on-1 call. No Linux, terminal, or coding experience is needed. The setup takes about 30 minutes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What do I need before booking a setup session?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Just 30 minutes for a Zoom call. You don't need any technical experience. We handle the VPS setup, OpenClaw installation, skill configuration, and LLM connection for you."
+          }
+        },
+
+        {
+          "@type": "Question",
+          "name": "Why should I run OpenClaw on a VPS instead of my laptop?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A VPS keeps OpenClaw running 24/7 without needing your laptop open. Your data stays on a server you control, and you won't lose uptime from internet outages, reboots, or closing your laptop lid."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which LLMs does OpenClaw support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "OpenClaw is model-agnostic. It works with Anthropic Claude, OpenAI GPT, Google Gemini, and local models via Ollama. During your setup call, we configure your preferred LLM."
+          }
+        }
+      ]
     }
-  ]
-}
-</script>
+    </script>
 
-<style>
-:root {
-  --deep: #0B1D1A;
-  --moss: #1B4D3E;
-  --sage: #5B8A72;
-  --mist: #A8C5B8;
-  --cloud: #E8F0EB;
-  --snow: #F7FAF8;
-  --gold: #C8963E;
-  --gold-light: #E8C87A;
-  --gold-dark: #9E7230;
-  --success: #3A8B5C;
-  --font-display: 'Source Serif 4', 'Times New Roman', serif;
-  --font-body: 'Outfit', system-ui, sans-serif;
-  --radius: 14px;
-}
+    <!-- Structured Data: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://getclawhelp.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://getclawhelp.com/blog/"
+        }
+      ]
+    }
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  font-family: var(--font-body);
-  font-weight: 400;
-  color: var(--cloud);
-  background: var(--deep);
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-}
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #111111;
+            --bg-card: #1a1a1a;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --accent: #ff6b4a;
+            --accent-hover: #ff8266;
+            --teal: #4ecdc4;
+            --border: #2a2a2a;
+        }
 
-.container { max-width: 1200px; margin: 0 auto; padding: 0 clamp(1.5rem, 5vw, 4rem); }
+        body {
+            font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.animate-up { opacity: 0; animation: fadeUp 0.8s ease-out forwards; }
-.delay-1 { animation-delay: 0.15s; }
-.delay-2 { animation-delay: 0.3s; }
-.delay-3 { animation-delay: 0.45s; }
-.delay-4 { animation-delay: 0.6s; }
+        /* Animated background gradient */
+        .bg-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(ellipse at 20% 20%, rgba(255, 107, 74, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(78, 205, 196, 0.06) 0%, transparent 50%),
+                var(--bg-primary);
+            z-index: -1;
+        }
 
-/* NAV */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  padding: 1.25rem 0;
-  background: rgba(11, 29, 26, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(168, 197, 184, 0.08);
-}
-nav .container { display: flex; align-items: center; justify-content: space-between; }
-.logo {
-  font-family: var(--font-display); font-weight: 700; font-size: 1.5rem;
-  color: var(--snow); text-decoration: none;
-}
-.logo .accent { color: var(--gold); }
-.nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
-.nav-links a {
-  font-weight: 500; font-size: 0.9rem; color: var(--mist);
-  text-decoration: none; transition: color 0.25s;
-}
-.nav-links a:hover { color: var(--snow); }
-.nav-cta {
-  font-weight: 600; font-size: 0.85rem; color: var(--deep);
-  background: var(--gold); padding: 0.6rem 1.4rem; border-radius: var(--radius);
-  transition: background 0.25s, transform 0.2s; white-space: nowrap;
-}
-.nav-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
-.mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
-.mobile-menu-btn span { display: block; width: 24px; height: 2px; background: var(--mist); margin: 5px 0; transition: 0.3s; }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
 
-/* HERO */
-.hero {
-  position: relative; min-height: 100vh; display: flex; align-items: center;
-  padding-top: 6rem; overflow: hidden;
-}
-.hero::before {
-  content: ''; position: absolute; top: 20%; left: -10%; width: 120%; height: 200px;
-  background: radial-gradient(ellipse at center, rgba(27, 77, 62, 0.2) 0%, transparent 70%);
-  animation: mistDrift 12s ease-in-out infinite; pointer-events: none;
-}
-@keyframes mistDrift {
-  0%, 100% { transform: translateX(0) scaleX(1); opacity: 0.08; }
-  50% { transform: translateX(40px) scaleX(1.1); opacity: 0.14; }
-}
-.gold-glow {
-  position: absolute; top: -5%; right: -10%; width: 600px; height: 600px;
-  background: radial-gradient(circle, rgba(200, 150, 62, 0.08) 0%, transparent 60%);
-  pointer-events: none;
-}
-.hero-content { position: relative; z-index: 2; max-width: 780px; }
-.hero-tag {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  font-weight: 500; font-size: 0.8rem; color: var(--gold);
-  letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1.5rem;
-}
-.hero-tag::before { content: ''; display: block; width: 24px; height: 1px; background: var(--gold); }
-.hero h1 {
-  font-family: var(--font-display); font-weight: 700;
-  font-size: clamp(2.8rem, 6vw, 4.5rem); line-height: 1.08;
-  color: var(--snow); letter-spacing: -0.025em; margin-bottom: 1.5rem;
-}
-.hero h1 em { font-style: italic; color: var(--gold); }
-.hero-sub {
-  font-weight: 300; font-size: clamp(1.1rem, 2vw, 1.3rem); line-height: 1.65;
-  color: var(--mist); max-width: 560px; margin-bottom: 2.5rem;
-}
-.btn-primary {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  font-family: var(--font-body); font-weight: 600; font-size: 1rem;
-  color: var(--deep); background: var(--gold);
-  padding: 0.9rem 2rem; border-radius: var(--radius); border: none;
-  cursor: pointer; text-decoration: none;
-  transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
-}
-.btn-primary:hover {
-  background: var(--gold-light); transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(200, 150, 62, 0.2);
-}
+        /* Navigation */
+        nav {
+            padding: 24px 0;
+            border-bottom: 1px solid var(--border);
+        }
 
-/* TRUST BADGES */
-.trust-bar {
-  display: flex; gap: 2rem; flex-wrap: wrap; margin-top: 3rem;
-}
-.trust-item {
-  display: flex; align-items: center; gap: 0.5rem;
-  font-size: 0.85rem; color: var(--sage); font-weight: 400;
-}
-.trust-item svg { width: 18px; height: 18px; flex-shrink: 0; }
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-/* SECTIONS */
-section { padding: clamp(5rem, 10vw, 8rem) 0; }
-.section-tag {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  font-weight: 600; font-size: 0.7rem; color: var(--gold);
-  letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1rem;
-}
-.section-tag::before {
-  content: ''; width: 8px; height: 8px; border-radius: 50%;
-  background: var(--gold); opacity: 0.5;
-}
-.section-title {
-  font-family: var(--font-display); font-weight: 700;
-  font-size: clamp(2rem, 4vw, 3rem); line-height: 1.12;
-  color: var(--snow); letter-spacing: -0.02em; margin-bottom: 1rem;
-}
-.section-subtitle {
-  font-weight: 300; font-size: 1.1rem; line-height: 1.6;
-  color: var(--mist); max-width: 560px; margin-bottom: 3.5rem;
-}
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
 
-/* CARDS GRID */
-.cards-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem;
-}
-.card {
-  background: rgba(27, 77, 62, 0.08);
-  border: 1px solid rgba(168, 197, 184, 0.08);
-  border-radius: var(--radius); padding: 2.2rem;
-  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
-  position: relative; overflow: hidden;
-}
-.card::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  opacity: 0; transition: opacity 0.3s;
-}
-.card:hover {
-  border-color: rgba(200, 150, 62, 0.15); transform: translateY(-4px);
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
-}
-.card:hover::before { opacity: 1; }
-.card-icon {
-  width: 48px; height: 48px; border-radius: 12px;
-  background: rgba(200, 150, 62, 0.1);
-  display: flex; align-items: center; justify-content: center;
-  margin-bottom: 1.5rem; font-size: 1.3rem;
-}
-.card h3 {
-  font-family: var(--font-display); font-weight: 600; font-size: 1.25rem;
-  color: var(--snow); margin-bottom: 0.75rem;
-}
-.card p {
-  font-weight: 300; font-size: 0.95rem; line-height: 1.6; color: var(--mist);
-}
+        .logo-icon {
+            font-size: 1.8rem;
+        }
 
-/* PROCESS STEPS */
-.process-section {
-  background: linear-gradient(180deg, var(--deep) 0%, rgba(27, 77, 62, 0.06) 50%, var(--deep) 100%);
-}
-.process-steps {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; position: relative;
-}
-.process-steps::before {
-  content: ''; position: absolute; top: 28px; left: 15%; right: 15%; height: 1px;
-  background: linear-gradient(90deg, transparent, var(--moss), transparent);
-}
-.step { text-align: center; position: relative; }
-.step-number {
-  display: inline-flex; align-items: center; justify-content: center;
-  width: 56px; height: 56px; border-radius: 50%;
-  background: var(--deep); border: 1px solid var(--moss);
-  font-family: var(--font-display); font-weight: 700; font-size: 1.2rem;
-  color: var(--gold); margin-bottom: 1.5rem; position: relative; z-index: 2;
-  transition: border-color 0.3s, box-shadow 0.3s;
-}
-.step:hover .step-number {
-  border-color: var(--gold); box-shadow: 0 0 24px rgba(200, 150, 62, 0.15);
-}
-.step h3 {
-  font-family: var(--font-display); font-weight: 600; font-size: 1.15rem;
-  color: var(--snow); margin-bottom: 0.6rem;
-}
-.step p {
-  font-weight: 300; font-size: 0.9rem; line-height: 1.6;
-  color: var(--mist); max-width: 280px; margin: 0 auto;
-}
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
 
-/* WHAT YOU NEED */
-.need-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;
-}
-.need-card {
-  text-align: center; padding: 2.5rem;
-  background: rgba(27, 77, 62, 0.06);
-  border: 1px solid rgba(168, 197, 184, 0.08);
-  border-radius: var(--radius);
-}
-.need-card .icon { font-size: 2.5rem; margin-bottom: 1rem; }
-.need-card h3 {
-  font-family: var(--font-display); font-weight: 600; font-size: 1.3rem;
-  color: var(--snow); margin-bottom: 0.5rem;
-}
-.need-card p { font-weight: 300; font-size: 0.95rem; line-height: 1.6; color: var(--mist); }
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
 
-/* PRICING */
-.pricing-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem; align-items: start;
-}
-.price-card {
-  background: rgba(27, 77, 62, 0.06);
-  border: 1px solid rgba(168, 197, 184, 0.08);
-  border-radius: var(--radius); padding: 2.5rem;
-  transition: border-color 0.3s, transform 0.3s; position: relative;
-}
-.price-card:hover { transform: translateY(-4px); }
-.price-card.featured {
-  border-color: var(--gold); background: rgba(200, 150, 62, 0.04);
-}
-.price-card.featured::before {
-  content: 'Most Popular'; position: absolute; top: -12px; left: 2rem;
-  font-weight: 600; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--deep); background: var(--gold); padding: 0.3rem 1rem; border-radius: 20px;
-}
-.price-tier {
-  font-weight: 600; font-size: 0.75rem; letter-spacing: 0.12em;
-  text-transform: uppercase; color: var(--sage); margin-bottom: 0.75rem;
-}
-.price-amount {
-  font-family: var(--font-display); font-weight: 700; font-size: 2.5rem;
-  color: var(--snow); line-height: 1; margin-bottom: 0.25rem;
-}
-.price-amount span { font-size: 1rem; font-weight: 400; color: var(--sage); }
-.price-desc {
-  font-weight: 300; font-size: 0.9rem; color: var(--mist);
-  margin-bottom: 2rem; line-height: 1.5;
-}
-.price-features { list-style: none; margin-bottom: 2rem; }
-.price-features li {
-  font-size: 0.9rem; color: var(--mist); padding: 0.5rem 0;
-  border-bottom: 1px solid rgba(168, 197, 184, 0.06);
-  display: flex; align-items: center; gap: 0.6rem;
-}
-.price-features li::before { content: '✓'; color: var(--success); font-weight: 600; font-size: 0.85rem; }
-.price-btn {
-  width: 100%; text-align: center; padding: 0.85rem 1.5rem;
-  border-radius: var(--radius); font-family: var(--font-body);
-  font-weight: 600; font-size: 0.9rem; text-decoration: none;
-  transition: all 0.25s; display: block; cursor: pointer;
-}
-.price-btn-primary { background: var(--gold); color: var(--deep); border: none; }
-.price-btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
-.price-btn-secondary { background: transparent; color: var(--mist); border: 1px solid rgba(168, 197, 184, 0.15); }
-.price-btn-secondary:hover { border-color: var(--sage); color: var(--snow); }
+        .nav-links a:hover {
+            color: var(--teal);
+        }
 
-/* TESTIMONIALS */
-.testimonials-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem;
-}
-.testimonial {
-  background: rgba(27, 77, 62, 0.06);
-  border: 1px solid rgba(168, 197, 184, 0.08);
-  border-radius: var(--radius); padding: 2.5rem;
-}
-.testimonial-quote {
-  font-family: var(--font-display); font-style: italic; font-size: 1.1rem;
-  line-height: 1.55; color: var(--cloud); margin-bottom: 1.5rem;
-  padding-left: 1.5rem; border-left: 2px solid var(--gold);
-}
-.testimonial-author { display: flex; align-items: center; gap: 0.75rem; }
-.testimonial-avatar {
-  width: 40px; height: 40px; border-radius: 50%; background: var(--moss);
-  display: flex; align-items: center; justify-content: center;
-  font-weight: 600; font-size: 0.8rem; color: var(--mist);
-}
-.testimonial-name { font-weight: 500; font-size: 0.9rem; color: var(--snow); }
-.testimonial-handle { font-size: 0.8rem; color: var(--sage); }
+        .nav-links a.active {
+            color: var(--text-primary);
+        }
 
-/* CTA SECTION */
-.cta-section {
-  text-align: center; position: relative; overflow: hidden;
-  background: linear-gradient(180deg, var(--deep) 0%, rgba(27, 77, 62, 0.1) 50%, var(--deep) 100%);
-}
+        /* Pricing Section */
+        .pricing-section {
+            padding: 80px 0;
+            border-top: 1px solid var(--border);
+        }
 
-/* FOOTER */
-footer {
-  padding: 3rem 0; border-top: 1px solid rgba(168, 197, 184, 0.08);
-}
-footer .container {
-  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
-}
-.footer-links { display: flex; gap: 2rem; list-style: none; }
-.footer-links a { font-size: 0.85rem; color: var(--sage); text-decoration: none; transition: color 0.25s; }
-.footer-links a:hover { color: var(--snow); }
-.footer-copy { font-size: 0.8rem; color: rgba(168, 197, 184, 0.4); }
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1100px;
+            margin: 40px auto 0;
+        }
 
-/* MOBILE */
-@media (max-width: 768px) {
-  .nav-links { display: none; }
-  .mobile-menu-btn { display: block; }
-  nav.open .nav-links {
-    display: flex; flex-direction: column; position: absolute;
-    top: 100%; left: 0; right: 0; background: rgba(11, 29, 26, 0.95);
-    padding: 1.5rem; gap: 1rem; border-bottom: 1px solid rgba(168, 197, 184, 0.08);
-  }
-  .process-steps { grid-template-columns: 1fr; }
-  .process-steps::before { display: none; }
-  .trust-bar { gap: 1rem; }
-  .hero h1 { font-size: 2.2rem; }
-  footer .container { flex-direction: column; text-align: center; }
-  .footer-links { justify-content: center; }
-}
-</style>
+        .pricing-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 36px 32px;
+            position: relative;
+            transition: border-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .pricing-card:hover {
+            border-color: #333;
+            transform: translateY(-2px);
+        }
+
+        .pricing-card.popular {
+            border-color: var(--accent);
+            border-width: 2px;
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent);
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 16px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .pricing-amount {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1;
+        }
+
+        .pricing-amount span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+        }
+
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin: 24px 0;
+        }
+
+        .pricing-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 8px 0;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .pricing-features li .check {
+            color: var(--accent);
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .pricing-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 14px 24px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .pricing-btn-primary {
+            background: var(--accent);
+            color: #fff;
+            border: none;
+        }
+
+        .pricing-btn-primary:hover {
+            background: var(--accent-hover);
+        }
+
+        .pricing-btn-outline {
+            background: transparent;
+            color: var(--text-secondary);
+            border: 1px solid var(--border);
+        }
+
+        .pricing-btn-outline:hover {
+            border-color: var(--text-secondary);
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 768px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Free banner */
+        .free-banner {
+            background: linear-gradient(135deg, rgba(78, 205, 196, 0.15) 0%, rgba(255, 107, 74, 0.15) 100%);
+            border: 1px solid rgba(78, 205, 196, 0.3);
+            border-radius: 12px;
+            padding: 16px 24px;
+            margin: 24px auto;
+            max-width: 800px;
+            text-align: center;
+            font-size: 0.95rem;
+        }
+
+        .free-banner strong {
+            color: var(--teal);
+        }
+
+        .price-compare {
+            text-decoration: line-through;
+            color: var(--text-secondary);
+            opacity: 0.7;
+        }
+
+        .free-price {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0 80px;
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(78, 205, 196, 0.1);
+            border: 1px solid rgba(78, 205, 196, 0.3);
+            color: var(--teal);
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 32px;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            animation: fadeInUp 0.6s ease-out 0.1s backwards;
+        }
+
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, var(--teal) 0%, #2dd4bf 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero h1 .highlight-orange {
+            background: linear-gradient(135deg, var(--accent) 0%, #ff8855 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 40px;
+            animation: fadeInUp 0.6s ease-out 0.2s backwards;
+        }
+
+        .cta-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            animation: fadeInUp 0.6s ease-out 0.3s backwards;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--accent) 0%, #ff8855 100%);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 12px;
+            font-size: 1.125rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 24px rgba(255, 107, 74, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(255, 107, 74, 0.4);
+        }
+
+        .btn-primary svg {
+            transition: transform 0.3s ease;
+        }
+
+        .btn-primary:hover svg {
+            transform: translateX(4px);
+        }
+
+        /* Value Props */
+        .value-props {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-top: 48px;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.6s ease-out 0.4s backwards;
+        }
+
+        .value-prop {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .value-prop svg {
+            color: var(--teal);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+        }
+
+        .section-label {
+            text-align: center;
+            color: var(--teal);
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            margin-bottom: 60px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: rgba(255, 107, 74, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 107, 74, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            padding: 80px 0;
+            background: var(--bg-secondary);
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--accent) 0%, #ff8855 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 24px;
+        }
+
+        .step h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+        }
+
+        .step p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-top: 60px;
+        }
+
+        .testimonial-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+        }
+
+        .testimonial-content {
+            font-size: 1rem;
+            margin-bottom: 24px;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-avatar {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--accent), var(--teal));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+
+        .testimonial-name {
+            font-weight: 600;
+        }
+
+        .testimonial-handle {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            padding: 100px 0;
+            text-align: center;
+            background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+        }
+
+        .final-cta h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 24px;
+        }
+
+        .final-cta p {
+            color: var(--text-secondary);
+            font-size: 1.125rem;
+            margin-bottom: 40px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 0 50px;
+            }
+
+            .features, .how-it-works, .testimonials {
+                padding: 60px 0;
+            }
+
+            .btn-primary {
+                padding: 16px 32px;
+                font-size: 1rem;
+            }
+
+            .value-props {
+                gap: 16px;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="bg-gradient"></div>
 
-<!-- NAV -->
-<nav>
-  <div class="container">
-    <a href="/" class="logo">Get<span class="accent">Claw</span>Help</a>
-    <ul class="nav-links">
-      <li><a href="#why-vps">Why VPS</a></li>
-      <li><a href="#how-it-works">How It Works</a></li>
-      <li><a href="#pricing">Pricing</a></li>
-      <li><a href="/blog/">Blog</a></li>
-      <li><a href="https://calendly.com/sapientaai/1-1-to-install-openclaw" class="nav-cta">Book Your Time</a></li>
-    </ul>
-    <button class="mobile-menu-btn" onclick="this.closest('nav').classList.toggle('open')" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-content">
+            <a href="/" class="logo">
+                <span class="logo-icon">🦞</span>
+                <span>Get Claw Help</span>
+            </a>
+            <div class="nav-links">
+                <a href="/" class="active">Home</a>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="gold-glow"></div>
-  <div class="container">
-    <div class="hero-content">
-      <div class="hero-tag animate-up">OpenClaw Installation Service</div>
-      <h1 class="animate-up delay-1">Get OpenClaw Running on <em>Your VPS</em></h1>
-      <p class="hero-sub animate-up delay-2">Book a 1-on-1 call and we'll install OpenClaw on your VPS, configure your first skills, and get you up and running.</p>
-      <a href="https://calendly.com/sapientaai/1-1-to-install-openclaw" class="btn-primary animate-up delay-3">Book Your Time →</a>
-      <div class="trust-bar animate-up delay-4">
-        <span class="trust-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-          No credit card required
-        </span>
-        <span class="trust-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          Open source
-        </span>
-        <span class="trust-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-          Your data stays private
-        </span>
-        <span class="trust-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          50+ integrations
-        </span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- WHY VPS -->
-<section id="why-vps">
-  <div class="container">
-    <div class="section-tag">Why Use a VPS?</div>
-    <h2 class="section-title">Your AI, Always On</h2>
-    <p class="section-subtitle">A VPS gives your OpenClaw instance a permanent home — always running, always private.</p>
-    <div class="cards-grid">
-      <div class="card">
-        <div class="card-icon">⚡</div>
-        <h3>Always Online</h3>
-        <p>Your AI assistant runs 24/7, even when your computer is off. Automations trigger on schedule, messages get answered, and workflows keep running.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">🔒</div>
-        <h3>Your Data, Your Server</h3>
-        <p>Everything stays on your VPS. No third-party cloud. No data harvesting. Full control over your AI, your conversations, and your automations.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section id="how-it-works" class="process-section">
-  <div class="container">
-    <div class="section-tag">How It Works</div>
-    <h2 class="section-title">Up and Running in 30 Minutes</h2>
-    <p class="section-subtitle">Three simple steps to your own AI assistant.</p>
-    <div class="process-steps">
-      <div class="step">
-        <div class="step-number">1</div>
-        <h3>Book Your Session</h3>
-        <p>Pick a time that works for you. We'll jump on a 1-on-1 call and handle everything.</p>
-      </div>
-      <div class="step">
-        <div class="step-number">2</div>
-        <h3>We Handle the Tech</h3>
-        <p>We install OpenClaw on your VPS, configure your skills, and connect your integrations.</p>
-      </div>
-      <div class="step">
-        <div class="step-number">3</div>
-        <h3>Start Automating</h3>
-        <p>Your AI assistant is live. Start automating tasks, answering messages, and saving time.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- WHAT YOU NEED -->
-<section>
-  <div class="container">
-    <div class="section-tag">What You Need</div>
-    <h2 class="section-title">Just Two Things</h2>
-    <p class="section-subtitle">We keep it simple so you can get started fast.</p>
-    <div class="need-grid">
-      <div class="need-card">
-        <div class="icon">⏱️</div>
-        <h3>30 Minutes</h3>
-        <p>That's all it takes. Jump on a call, and we'll have OpenClaw running on your VPS before time's up.</p>
-      </div>
-      <div class="need-card">
-        <div class="icon">🧠</div>
-        <h3>No Coding Required</h3>
-        <p>You don't need to know the command line, Docker, or any programming language. We do all the technical work.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PRICING -->
-<section id="pricing">
-  <div class="container">
-    <div class="section-tag">Pricing</div>
-    <h2 class="section-title">Simple, Transparent Pricing</h2>
-    <p class="section-subtitle">One-time setup or ongoing maintenance. No hidden fees.</p>
-    <div class="pricing-grid">
-
-      <div class="price-card">
-        <div class="price-tier">Maintenance</div>
-        <div class="price-amount">$97<span>/mo</span></div>
-        <p class="price-desc">Keep your OpenClaw running smoothly.</p>
-        <ul class="price-features">
-          <li>Regular updates &amp; troubleshooting</li>
-          <li>Config changes on request</li>
-          <li>New skills added monthly</li>
-          <li>Cancel any time</li>
-          <li>SKOOL community access</li>
-        </ul>
-        <a href="https://calendly.com/sapientaai/1-1-to-install-openclaw" class="price-btn price-btn-secondary">Get Started</a>
-      </div>
-
-      <div class="price-card featured">
-        <div class="price-tier">One-Time Setup</div>
-        <div class="price-amount">$119</div>
-        <p class="price-desc">Everything you need to get started.</p>
-        <ul class="price-features">
-          <li>Full setup — no coding</li>
-          <li>24/7 VPS deployment</li>
-          <li>Messenger control</li>
-          <li>10 skills pre-installed</li>
-          <li>Post-setup support</li>
-          <li>SKOOL community access</li>
-        </ul>
-        <a href="https://calendly.com/sapientaai/1-1-to-install-openclaw" class="price-btn price-btn-primary">Book Your Time →</a>
-      </div>
-
-      <div class="price-card">
-        <div class="price-tier">Premium Setup</div>
-        <div class="price-amount">$229</div>
-        <p class="price-desc">The full package for power users.</p>
-        <ul class="price-features">
-          <li>Everything in One-Time Setup</li>
-          <li>25 skills pre-installed</li>
-          <li>Workflow migration assistance</li>
-          <li>7 days priority support</li>
-        </ul>
-        <a href="https://calendly.com/sapientaai/openclaw-vps-deployment-getclawhelp-clone?month=2026-02" class="price-btn price-btn-secondary">Book Premium →</a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section>
-  <div class="container">
-    <div class="section-tag">What People Say</div>
-    <h2 class="section-title">Trusted by Builders</h2>
-    <p class="section-subtitle">Real feedback from real users.</p>
-    <div class="testimonials-grid">
-      <div class="testimonial">
-        <p class="testimonial-quote">"I had OpenClaw running on my VPS in under 30 minutes. The setup call was seamless — they handled everything while I watched. Now my AI runs 24/7 and I don't think about infrastructure at all."</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">JK</div>
-          <div>
-            <div class="testimonial-name">Jake K.</div>
-            <div class="testimonial-handle">@jakekdev</div>
-          </div>
+                <a href="/blog/">Blog</a>
+            </div>
         </div>
-      </div>
-      <div class="testimonial">
-        <p class="testimonial-quote">"I'm not technical at all and was nervous about self-hosting. They made it completely painless. My data stays on my server, and I have full control. Exactly what I wanted."</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">SM</div>
-          <div>
-            <div class="testimonial-name">Sarah M.</div>
-            <div class="testimonial-handle">@sarahcodes</div>
-          </div>
+    </nav>
+
+    
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="badge">🔧 Remote Setup — We'll Set It Up For You</div>
+            <h1>Get OpenClaw Running on <span class="highlight-orange">Your VPS</span></h1>
+            <p class="hero-subtitle">Book a 1-on-1 call and we'll install OpenClaw on your VPS, configure your first skills, and get you up and running.</p>
+            <div class="cta-group">
+                <a href="https://calendly.com/d/cvkf-q3t-25j/free-discovery-call-with-paramo" class="btn-primary">
+                    Book Your Time
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 8px;">No credit card required to book</p>
+            </div>
+            <div class="value-props">
+                <div class="value-prop">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                    Open source
+                </div>
+                <div class="value-prop">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                    Your data stays private
+                </div>
+                <div class="value-prop">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                    50+ integrations
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="testimonial">
-        <p class="testimonial-quote">"The premium setup was worth every penny. 25 skills configured, my workflows migrated, and priority support when I needed it. This is how every dev tool should be sold."</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">AR</div>
-          <div>
-            <div class="testimonial-name">Alex R.</div>
-            <div class="testimonial-handle">@alexrbuilds</div>
-          </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <p class="section-label">Why Use a VPS?</p>
+            <h2 class="section-title">Your OpenClaw deserves a proper home</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>Always Online</h3>
+                    <p>Your OpenClaw runs 24/7—no need to keep your laptop open or worry about your home internet going down.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Your Data, Your Server</h3>
+                    <p>Everything stays on hardware you control. Your emails, calendar, and conversations never leave your machine.</p>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- CTA -->
-<section class="cta-section">
-  <div class="container">
-    <h2 class="section-title" style="margin-bottom: 1rem;">Ready to Get Started?</h2>
-    <p class="section-subtitle" style="margin: 0 auto 2.5rem;">Book a call and we'll have OpenClaw running on your VPS today.</p>
-    <a href="https://calendly.com/sapientaai/1-1-to-install-openclaw" class="btn-primary">Book Your Time →</a>
-  </div>
-</section>
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <p class="section-label">How It Works</p>
+            <h2 class="section-title">Live in 3 simple steps</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Book Your Session</h3>
+                    <p>Pick a time that works. We will walk you through onboarding!</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>We Handle the Tech</h3>
+                    <p>We'll set up your VPS and install OpenClaw FOR YOU with your preferred LLM</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Start Automating</h3>
+                    <p>Your OpenClaw is live. Connect your inbox, calendar, and start building automations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="container">
-    <ul class="footer-links">
-      <li><a href="/">Home</a></li>
-      <li><a href="/blog/">Blog</a></li>
-      <li><a href="#pricing">Pricing</a></li>
-      <li><a href="https://calendly.com/sapientaai/1-1-to-install-openclaw">Book a Call</a></li>
-    </ul>
-    <span class="footer-copy">&copy; 2026 GetClawHelp. All rights reserved.</span>
-  </div>
-</footer>
+    <!-- What You Need -->
+    <section class="features" style="padding-top: 40px;">
+        <div class="container">
+            <p class="section-label">Before You Book</p>
+            <h2 class="section-title">What You Need</h2>
+            <div class="features-grid" style="max-width: 800px; margin: 0 auto;">
+                <div class="feature-card" style="text-align: center;">
+                    <div class="feature-icon" style="margin: 0 auto 20px;">🕐</div>
+                    <h3>30 Minutes</h3>
+                    <p>A quick Zoom call is all it takes</p>
+                </div>
+                <div class="feature-card" style="text-align: center;">
+                    <div class="feature-icon" style="margin: 0 auto 20px;">👋</div>
+                    <h3>No Coding Required</h3>
+                    <p>No Linux or tech experience needed</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Pricing -->
+    <section class="pricing-section">
+        <div class="container">
+            <p class="section-label">Pricing</p>
+            <h2 class="section-title">Simple, transparent pricing</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <p style="font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-secondary); margin-bottom: 16px;">Maintenance</p>
+                    <div class="pricing-amount">$97<span>/mo</span></div>
+                    <p style="color: var(--text-secondary); margin: 12px 0 0;">Keep your OpenClaw running smoothly</p>
+                    <ul class="pricing-features">
+                        <li><span class="check">✓</span> Regular updates &amp; troubleshooting</li>
+                        <li><span class="check">✓</span> Config changes on request</li>
+                        <li><span class="check">✓</span> New skills added monthly</li>
+                        <li><span class="check">✓</span> Cancel any time</li>
+                        <li><span class="check">✓</span> SKOOL community access</li>
+                    </ul>
+                    <a href="https://calendly.com/sapientaai/1-1-to-install-openclaw" class="pricing-btn pricing-btn-outline">Get Started</a>
+                </div>
+                <div class="pricing-card popular">
+                    <div class="pricing-badge">Most Popular</div>
+                    <p style="font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-secondary); margin-bottom: 16px;">One-Time Setup</p>
+                    <div class="pricing-amount">$119</div>
+                    <p style="color: var(--text-secondary); margin: 12px 0 0;">Everything you need to get started</p>
+                    <ul class="pricing-features">
+                        <li><span class="check">✓</span> Full setup — no coding</li>
+                        <li><span class="check">✓</span> 24/7 VPS deployment</li>
+                        <li><span class="check">✓</span> Messenger control</li>
+                        <li><span class="check">✓</span> 10 skills pre-installed</li>
+                        <li><span class="check">✓</span> Post-setup support</li>
+                        <li><span class="check">✓</span> SKOOL community access</li>
+                    </ul>
+                    <a href="https://calendly.com/sapientaai/1-1-to-install-openclaw" class="pricing-btn pricing-btn-primary">Book Your Time →</a>
+                </div>
+                <div class="pricing-card">
+                    <p style="font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-secondary); margin-bottom: 16px;">Premium Setup</p>
+                    <div class="pricing-amount">$229</div>
+                    <p style="color: var(--text-secondary); margin: 12px 0 0;">The full package for power users</p>
+                    <ul class="pricing-features">
+                        <li><span class="check">✓</span> Everything in One-Time Setup</li>
+                        <li><span class="check">✓</span> 25 skills pre-installed</li>
+                        <li><span class="check">✓</span> Workflow migration assistance</li>
+                        <li><span class="check">✓</span> 7 days priority support</li>
+                    </ul>
+                    <a href="https://calendly.com/sapientaai/openclaw-vps-deployment-getclawhelp-clone?month=2026-02" class="pricing-btn pricing-btn-outline">Book Premium →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <p class="section-label">What People Say</p>
+            <h2 class="section-title">Join hundreds running OpenClaw</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-content">"I was dreading the server setup, but they walked me through everything in 20 minutes. Now I actually understand how it all works."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">JK</div>
+                        <div>
+                            <div class="testimonial-name">Jake K.</div>
+                            <div class="testimonial-handle">@jakekdev</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-content">"One-time fee vs monthly subscriptions elsewhere? Easy choice. The setup call was super helpful and saved me hours of frustration."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">SM</div>
+                        <div>
+                            <div class="testimonial-name">Sarah M.</div>
+                            <div class="testimonial-handle">@sarahcodes</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-content">"Booked a slot, showed up, and left with OpenClaw running on my own server. Easiest tech setup I've ever done."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">AR</div>
+                        <div>
+                            <div class="testimonial-name">Alex R.</div>
+                            <div class="testimonial-handle">@alexrbuilds</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>Powered by <a href="https://paramo.sh" target="_blank" style="color: #2d8a6e;">Paramo.sh</a></p>
+            <p style="margin-top: 12px;"><a href="https://x.com/tipbtdennis" target="_blank" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: color 0.3s;"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> Follow on X</a></p>
+
+        </div>
+    </footer>
 </body>
 </html>
