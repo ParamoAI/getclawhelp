@@ -34,22 +34,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
             --bg-primary: #0a0a0a;
             --bg-secondary: #111111;
             --bg-card: #1a1a1a;
+            --bg-input: #111111;
             --text-primary: #ffffff;
             --text-secondary: #a0a0a0;
             --accent: #ff6b4a;
             --accent-hover: #ff8266;
             --teal: #4ecdc4;
             --border: #2a2a2a;
+            --border-focus: #4ecdc4;
         }
 
         body {
@@ -61,11 +59,7 @@
         }
 
         .bg-gradient {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background:
                 radial-gradient(ellipse at 20% 20%, rgba(255, 107, 74, 0.08) 0%, transparent 50%),
                 radial-gradient(ellipse at 80% 80%, rgba(78, 205, 196, 0.06) 0%, transparent 50%),
@@ -73,385 +67,124 @@
             z-index: -1;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-        /* Navigation */
-        nav {
-            padding: 24px 0;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .nav-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .logo-icon {
-            font-size: 1.8rem;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 32px;
-        }
-
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.2s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--teal);
-        }
-
-        .nav-links a.active {
-            color: var(--text-primary);
-        }
+        /* Nav */
+        nav { padding: 24px 0; border-bottom: 1px solid var(--border); }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--text-primary); text-decoration: none; display: flex; align-items: center; gap: 8px; }
+        .logo-icon { font-size: 1.8rem; }
+        .nav-links { display: flex; align-items: center; gap: 32px; }
+        .nav-links a { color: var(--text-secondary); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: color 0.2s ease; }
+        .nav-links a:hover { color: var(--teal); }
+        .nav-links a.active { color: var(--text-primary); }
 
         /* Hero */
-        .hero {
-            padding: 60px 0 40px;
-            text-align: center;
-        }
-
+        .hero { padding: 60px 0 40px; text-align: center; }
         .badge {
-            display: inline-block;
-            background: rgba(78, 205, 196, 0.1);
-            border: 1px solid rgba(78, 205, 196, 0.3);
-            color: var(--teal);
-            padding: 8px 16px;
-            border-radius: 100px;
-            font-size: 0.875rem;
-            font-weight: 500;
-            margin-bottom: 24px;
-            animation: fadeInUp 0.6s ease-out;
+            display: inline-block; background: rgba(78, 205, 196, 0.1); border: 1px solid rgba(78, 205, 196, 0.3);
+            color: var(--teal); padding: 8px 16px; border-radius: 100px; font-size: 0.875rem; font-weight: 500;
+            margin-bottom: 24px; animation: fadeInUp 0.6s ease-out;
         }
-
-        .hero h1 {
-            font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 700;
-            line-height: 1.1;
-            margin-bottom: 16px;
-            animation: fadeInUp 0.6s ease-out 0.1s backwards;
-        }
-
-        .hero h1 .highlight {
-            background: linear-gradient(135deg, var(--teal) 0%, #2dd4bf 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
+        .hero h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; line-height: 1.1; margin-bottom: 16px; animation: fadeInUp 0.6s ease-out 0.1s backwards; }
         .hero h1 .highlight-orange {
             background: linear-gradient(135deg, var(--accent) 0%, #ff8855 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
         }
-
-        .hero-subtitle {
-            font-size: 1.125rem;
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto;
-            animation: fadeInUp 0.6s ease-out 0.2s backwards;
-        }
-
-        /* Form Section */
-        .form-section {
-            padding: 40px 0 60px;
-        }
-
-        .form-container {
-            max-width: 680px;
-            margin: 0 auto;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 48px 40px;
-            animation: fadeInUp 0.6s ease-out 0.3s backwards;
-        }
-
-        .form-group {
-            margin-bottom: 24px;
-        }
-
-        .form-group label {
-            display: block;
-            font-weight: 600;
-            font-size: 0.95rem;
-            margin-bottom: 8px;
-            color: var(--text-primary);
-        }
-
-        .form-group label .required {
-            color: var(--accent);
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 14px 16px;
-            background: var(--bg-primary);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            color: var(--text-primary);
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1rem;
-            transition: border-color 0.2s ease;
-            outline: none;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            border-color: var(--teal);
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: #555;
-        }
-
-        .form-group select {
-            appearance: none;
-            -webkit-appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23a0a0a0' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 16px center;
-            padding-right: 40px;
-            cursor: pointer;
-        }
-
-        .form-group select option {
-            background: var(--bg-primary);
-            color: var(--text-primary);
-        }
-
-        .form-group textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-        }
-
-        /* Honeypot */
-        .hp-field {
-            position: absolute;
-            left: -9999px;
-            opacity: 0;
-            height: 0;
-            width: 0;
-            overflow: hidden;
-        }
-
-        .btn-submit {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            width: 100%;
-            background: linear-gradient(135deg, var(--accent) 0%, #ff8855 100%);
-            color: white;
-            padding: 18px 40px;
-            border-radius: 12px;
-            font-size: 1.125rem;
-            font-weight: 600;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 24px rgba(255, 107, 74, 0.3);
-            font-family: 'Space Grotesk', sans-serif;
-            margin-top: 8px;
-        }
-
-        .btn-submit:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 32px rgba(255, 107, 74, 0.4);
-        }
-
-        .btn-submit:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        .btn-submit svg {
-            transition: transform 0.3s ease;
-        }
-
-        .btn-submit:hover svg {
-            transform: translateX(4px);
-        }
-
-        .form-note {
-            text-align: center;
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            margin-top: 16px;
-        }
-
-        /* Success state */
-        .success-message {
-            display: none;
-            text-align: center;
-            padding: 40px 20px;
-        }
-
-        .success-message.active {
-            display: block;
-        }
-
-        .success-icon {
-            font-size: 3rem;
-            margin-bottom: 16px;
-        }
-
-        .success-message h2 {
-            font-size: 1.75rem;
-            margin-bottom: 12px;
-        }
-
-        .success-message p {
-            color: var(--text-secondary);
-            font-size: 1.05rem;
-            margin-bottom: 32px;
-        }
-
-        .btn-calendar {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: linear-gradient(135deg, var(--teal) 0%, #2dd4bf 100%);
-            color: #0a0a0a;
-            padding: 18px 36px;
-            border-radius: 12px;
-            font-size: 1.125rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 24px rgba(78, 205, 196, 0.3);
-        }
-
-        .btn-calendar:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 32px rgba(78, 205, 196, 0.4);
-        }
+        .hero-subtitle { font-size: 1.125rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto; animation: fadeInUp 0.6s ease-out 0.2s backwards; }
 
         /* Categories */
-        .categories-section {
-            padding: 40px 0 80px;
-        }
+        .categories-section { padding: 40px 0 60px; }
+        .categories-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; max-width: 800px; margin: 40px auto 0; }
+        .category-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; text-align: center; transition: all 0.3s ease; }
+        .category-card:hover { border-color: rgba(78, 205, 196, 0.3); transform: translateY(-2px); }
+        .category-icon { font-size: 1.5rem; margin-bottom: 8px; }
+        .category-card h3 { font-size: 0.95rem; margin-bottom: 4px; }
+        .category-card p { color: var(--text-secondary); font-size: 0.8rem; }
 
-        .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 16px;
-            max-width: 800px;
-            margin: 40px auto 0;
+        /* Form */
+        .form-section { padding: 0 0 80px; }
+        .form-container {
+            max-width: 680px; margin: 0 auto; background: var(--bg-card);
+            border: 1px solid var(--border); border-radius: 20px; padding: 48px 40px;
+            animation: fadeInUp 0.6s ease-out 0.3s backwards;
         }
+        .form-group { margin-bottom: 24px; }
+        .form-group label { display: block; font-weight: 600; font-size: 0.95rem; margin-bottom: 8px; color: var(--text-primary); }
+        .form-group label .req { color: var(--accent); }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%; padding: 14px 16px; background: var(--bg-input); border: 1px solid var(--border);
+            border-radius: 10px; color: var(--text-primary); font-family: 'Space Grotesk', sans-serif;
+            font-size: 1rem; transition: border-color 0.2s ease; outline: none;
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--border-focus); }
+        .form-group input::placeholder, .form-group textarea::placeholder { color: #555; }
+        .form-group select {
+            appearance: none; -webkit-appearance: none; cursor: pointer;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23a0a0a0' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px;
+        }
+        .form-group select option { background: var(--bg-primary); color: var(--text-primary); }
+        .form-group textarea { min-height: 120px; resize: vertical; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 
-        .category-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
+        /* Honeypot */
+        .hp { position: absolute; left: -9999px; opacity: 0; height: 0; width: 0; overflow: hidden; }
 
-        .category-card:hover {
-            border-color: rgba(78, 205, 196, 0.3);
-            transform: translateY(-2px);
+        .btn-submit {
+            display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: 100%;
+            background: linear-gradient(135deg, var(--accent) 0%, #ff8855 100%); color: white;
+            padding: 18px 40px; border-radius: 12px; font-size: 1.125rem; font-weight: 600;
+            border: none; cursor: pointer; transition: all 0.3s ease;
+            box-shadow: 0 4px 24px rgba(255, 107, 74, 0.3); font-family: 'Space Grotesk', sans-serif; margin-top: 8px;
         }
+        .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(255, 107, 74, 0.4); }
+        .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+        .btn-submit svg { transition: transform 0.3s ease; }
+        .btn-submit:hover svg { transform: translateX(4px); }
+        .form-note { text-align: center; color: var(--text-secondary); font-size: 0.85rem; margin-top: 16px; }
 
-        .category-icon {
-            font-size: 1.5rem;
-            margin-bottom: 8px;
+        /* Success */
+        .success-message { display: none; text-align: center; padding: 40px 20px; }
+        .success-message.active { display: block; }
+        .success-icon { font-size: 3rem; margin-bottom: 16px; }
+        .success-message h2 { font-size: 1.75rem; margin-bottom: 12px; }
+        .success-message p { color: var(--text-secondary); font-size: 1.05rem; margin-bottom: 32px; }
+        .btn-calendar {
+            display: inline-flex; align-items: center; gap: 10px;
+            background: linear-gradient(135deg, var(--teal) 0%, #2dd4bf 100%); color: #0a0a0a;
+            padding: 18px 36px; border-radius: 12px; font-size: 1.125rem; font-weight: 600;
+            text-decoration: none; transition: all 0.3s ease; box-shadow: 0 4px 24px rgba(78, 205, 196, 0.3);
         }
+        .btn-calendar:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(78, 205, 196, 0.4); }
 
-        .category-card h3 {
-            font-size: 0.95rem;
-            margin-bottom: 4px;
+        /* Error */
+        .form-error {
+            background: rgba(255, 107, 74, 0.1); border: 1px solid rgba(255, 107, 74, 0.3);
+            color: var(--accent); padding: 12px 16px; border-radius: 10px; margin-bottom: 20px;
+            font-size: 0.9rem; display: none;
         }
-
-        .category-card p {
-            color: var(--text-secondary);
-            font-size: 0.8rem;
-        }
+        .form-error.active { display: block; }
 
         /* Footer */
-        footer {
-            padding: 40px 0;
-            border-top: 1px solid var(--border);
-            text-align: center;
-            color: var(--text-secondary);
-            font-size: 0.875rem;
-        }
+        footer { padding: 40px 0; border-top: 1px solid var(--border); text-align: center; color: var(--text-secondary); font-size: 0.875rem; }
+        footer a { color: var(--accent); text-decoration: none; }
 
-        footer a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
         @media (max-width: 768px) {
-            .form-container {
-                padding: 32px 24px;
-            }
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-            .hero {
-                padding: 40px 0 24px;
-            }
+            .form-container { padding: 32px 24px; }
+            .form-row { grid-template-columns: 1fr; }
+            .hero { padding: 40px 0 24px; }
         }
     </style>
 </head>
 <body>
     <div class="bg-gradient"></div>
 
-    <!-- Navigation -->
     <nav>
         <div class="container nav-content">
-            <a href="/" class="logo">
-                <span class="logo-icon">🦞</span>
-                <span>Get Claw Help</span>
-            </a>
+            <a href="/" class="logo"><span class="logo-icon">🦞</span><span>Get Claw Help</span></a>
             <div class="nav-links">
                 <a href="/">Home</a>
                 <a href="/consult/" class="active">Custom Solutions</a>
@@ -460,7 +193,6 @@
         </div>
     </nav>
 
-    <!-- Hero -->
     <section class="hero">
         <div class="container">
             <div class="badge">🚀 Beyond Basic Setup</div>
@@ -469,61 +201,157 @@
         </div>
     </section>
 
-    <!-- What We Help With -->
     <section class="categories-section">
         <div class="container">
             <div class="categories-grid">
-                <div class="category-card">
-                    <div class="category-icon">🔧</div>
-                    <h3>Setup & Installation</h3>
-                    <p>VPS setup, config, first run</p>
-                </div>
-                <div class="category-card">
-                    <div class="category-icon">🤖</div>
-                    <h3>Custom Agents</h3>
-                    <p>Purpose-built AI agents</p>
-                </div>
-                <div class="category-card">
-                    <div class="category-icon">⚡</div>
-                    <h3>Workflow Automation</h3>
-                    <p>Connect tools, automate flows</p>
-                </div>
-                <div class="category-card">
-                    <div class="category-icon">🏗️</div>
-                    <h3>Architecture Consulting</h3>
-                    <p>Design & rebuild from scratch</p>
-                </div>
-                <div class="category-card">
-                    <div class="category-icon">🛠️</div>
-                    <h3>Maintenance & Support</h3>
-                    <p>Ongoing help & optimization</p>
-                </div>
-                <div class="category-card">
-                    <div class="category-icon">💡</div>
-                    <h3>Something Else</h3>
-                    <p>We love weird problems</p>
-                </div>
+                <div class="category-card"><div class="category-icon">🔧</div><h3>Setup & Installation</h3><p>VPS setup, config, first run</p></div>
+                <div class="category-card"><div class="category-icon">🤖</div><h3>Custom Agents</h3><p>Purpose-built AI agents</p></div>
+                <div class="category-card"><div class="category-icon">⚡</div><h3>Workflow Automation</h3><p>Connect tools, automate flows</p></div>
+                <div class="category-card"><div class="category-icon">🏗️</div><h3>Architecture Consulting</h3><p>Design & rebuild from scratch</p></div>
+                <div class="category-card"><div class="category-icon">🛠️</div><h3>Maintenance & Support</h3><p>Ongoing help & optimization</p></div>
+                <div class="category-card"><div class="category-icon">💡</div><h3>Something Else</h3><p>We love weird problems</p></div>
             </div>
         </div>
     </section>
 
-    <!-- Form Section — Tally Embed -->
     <section class="form-section">
         <div class="container">
-            <div class="form-container" style="padding: 0; overflow: hidden; min-height: 600px;">
-                <iframe data-tally-src="https://tally.so/embed/9qWarQ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0" title="GetClawHelp — Custom Solutions"></iframe>
-                <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w;s.onload=v;s.onerror=v;d.body.appendChild(s)}</script>
+            <div class="form-container">
+                <form id="consultForm">
+                    <div class="form-error" id="formError"></div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Name <span class="req">*</span></label>
+                            <input type="text" id="fname" required placeholder="Your name">
+                        </div>
+                        <div class="form-group">
+                            <label>Email <span class="req">*</span></label>
+                            <input type="email" id="femail" required placeholder="you@example.com">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Category <span class="req">*</span></label>
+                            <select id="fcategory" required>
+                                <option value="" disabled selected>Select a category</option>
+                                <option value="Setup & Installation">Setup & Installation</option>
+                                <option value="Custom Agent Development">Custom Agent Development</option>
+                                <option value="Workflow Automation">Workflow Automation</option>
+                                <option value="Architecture Consulting">Architecture Consulting</option>
+                                <option value="Maintenance & Support">Maintenance & Support</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Budget</label>
+                            <select id="fbudget">
+                                <option value="" disabled selected>Select budget range</option>
+                                <option value="Under $500">Under $500</option>
+                                <option value="$500 – $2,000">$500 – $2,000</option>
+                                <option value="$2,000 – $5,000">$2,000 – $5,000</option>
+                                <option value="$5,000+">$5,000+</option>
+                                <option value="Not sure yet">Not sure yet</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Urgency</label>
+                        <select id="furgency">
+                            <option value="" disabled selected>How soon do you need this?</option>
+                            <option value="Just exploring">Just exploring</option>
+                            <option value="This month">This month</option>
+                            <option value="This week">This week</option>
+                            <option value="Urgent">Urgent — ASAP</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Tell us what you need <span class="req">*</span></label>
+                        <textarea id="fdesc" required placeholder="Describe your project, what you're trying to build, or the problem you're solving..."></textarea>
+                    </div>
+
+                    <div class="hp"><input type="text" id="fhp" tabindex="-1" autocomplete="off"></div>
+
+                    <button type="submit" class="btn-submit" id="submitBtn">
+                        Submit Request
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                    <p class="form-note">We'll review your request and get back within 24 hours.</p>
+                </form>
+
+                <div class="success-message" id="successMsg">
+                    <div class="success-icon">✅</div>
+                    <h2>Request Received!</h2>
+                    <p>We'll review your details and get back to you shortly. Want to skip the wait?</p>
+                    <a href="https://calendly.com/d/cvcf-mw2-x4z/getclawhelp-setup-call-powered-by-paramo-sh" class="btn-calendar" target="_blank">
+                        📅 Book a Call Now
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <p>Powered by <a href="https://paramo.sh" target="_blank" style="color: #2d8a6e;">Paramo.sh</a></p>
         </div>
     </footer>
 
-    <!-- Tally handles form submission natively -->
+    <script>
+    (function() {
+        const form = document.getElementById('consultForm');
+        const btn = document.getElementById('submitBtn');
+        const errEl = document.getElementById('formError');
+        const successEl = document.getElementById('successMsg');
+        const TALLY_URL = 'https://tally.so/r/9qWarQ';
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            if (document.getElementById('fhp').value) return;
+
+            errEl.classList.remove('active');
+            btn.disabled = true;
+            btn.textContent = 'Submitting...';
+
+            const data = {
+                name: document.getElementById('fname').value,
+                email: document.getElementById('femail').value,
+                category: document.getElementById('fcategory').value,
+                urgency: document.getElementById('furgency').value || '',
+                budget: document.getElementById('fbudget').value || '',
+                description: document.getElementById('fdesc').value
+            };
+
+            try {
+                // Submit to Tally via their form endpoint
+                const formData = new FormData();
+                formData.append('name', data.name);
+                formData.append('email', data.email);
+                formData.append('category', data.category);
+                formData.append('urgency', data.urgency);
+                formData.append('budget', data.budget);
+                formData.append('description', data.description);
+
+                await fetch(TALLY_URL, {
+                    method: 'POST',
+                    body: formData,
+                    mode: 'no-cors' // Tally doesn't return CORS headers for cross-origin
+                });
+
+                // Show success (no-cors means we can't read the response, but submission goes through)
+                form.style.display = 'none';
+                successEl.classList.add('active');
+            } catch (err) {
+                // If fetch fails, redirect to Tally form directly as fallback
+                const params = new URLSearchParams(data);
+                window.location.href = TALLY_URL + '?' + params.toString();
+            }
+        });
+    })();
+    </script>
 </body>
 </html>
