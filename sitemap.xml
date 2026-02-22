@@ -61,6 +61,56 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://getclawhelp.com/cities/austin/</loc>
+    <lastmod>2026-02-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getclawhelp.com/cities/cdmx/</loc>
+    <lastmod>2026-02-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getclawhelp.com/cities/london/</loc>
+    <lastmod>2026-02-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getclawhelp.com/cities/miami/</loc>
+    <lastmod>2026-02-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getclawhelp.com/cities/new-york-city/</loc>
+    <lastmod>2026-02-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getclawhelp.com/cities/rio-de-janeiro/</loc>
+    <lastmod>2026-02-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getclawhelp.com/cities/san-francisco/</loc>
+    <lastmod>2026-02-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getclawhelp.com/cities/tel-aviv/</loc>
+    <lastmod>2026-02-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getclawhelp.com/cities/tokyo/</loc>
+    <lastmod>2026-02-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getclawhelp.com/cities/vienna/</loc>
+    <lastmod>2026-02-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://getclawhelp.com/integrations/discord/</loc>
     <lastmod>2026-02-22</lastmod>
     <priority>0.7</priority>
@@ -110,67 +160,4 @@
     <lastmod>2026-02-22</lastmod>
     <priority>0.7</priority>
   </url>
-
-  <!-- PSEO-CITIES:START -->
-  <url>
-    <loc>https://getclawhelp.com/cities/new-york-city/</loc>
-    <lastmod>2026-02-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://getclawhelp.com/cities/austin/</loc>
-    <lastmod>2026-02-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://getclawhelp.com/cities/tel-aviv/</loc>
-    <lastmod>2026-02-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://getclawhelp.com/cities/miami/</loc>
-    <lastmod>2026-02-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://getclawhelp.com/cities/tokyo/</loc>
-    <lastmod>2026-02-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://getclawhelp.com/cities/london/</loc>
-    <lastmod>2026-02-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://getclawhelp.com/cities/cdmx/</loc>
-    <lastmod>2026-02-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://getclawhelp.com/cities/rio-de-janeiro/</loc>
-    <lastmod>2026-02-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://getclawhelp.com/cities/san-francisco/</loc>
-    <lastmod>2026-02-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://getclawhelp.com/cities/vienna/</loc>
-    <lastmod>2026-02-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <!-- PSEO-CITIES:END -->
 </urlset>
