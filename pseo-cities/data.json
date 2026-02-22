@@ -1,0 +1,182 @@
+[
+  {
+    "slug": "new-york-city",
+    "city": "New York City",
+    "country": "United States",
+    "emoji": "🗽",
+    "title": "AI Assistant Setup in New York City | OpenClaw",
+    "description": "Set up your personal AI assistant in New York City with OpenClaw. Connect to Slack, Telegram, WhatsApp and more. Join the NYC ClawCon meetup.",
+    "seoKeywords": "AI assistant New York, personal AI setup NYC, OpenClaw New York City, AI meetup NYC",
+    "localAngle": "<p>New York City is the world's business capital — and the pace here demands automation. Whether you're a <strong>Wall Street analyst</strong> summarizing earnings calls, a <strong>startup founder in SoHo</strong> managing investor updates, or a <strong>freelancer in Brooklyn</strong> juggling client emails, OpenClaw gives you a personal AI assistant that works across every platform you already use.</p><p>NYC's tech scene is booming, with thousands of AI-native companies calling Manhattan and Brooklyn home. OpenClaw fits right in — it connects to <a href=\"/integrations/slack/\">Slack</a>, <a href=\"/integrations/email/\">Email</a>, <a href=\"/integrations/whatsapp/\">WhatsApp</a>, and more, so your AI works wherever your team works.</p>",
+    "useCases": [
+      "Automate investor updates and board reporting for NYC startups",
+      "Summarize legal documents and contracts for law firms",
+      "Manage client communications across time zones from one AI hub",
+      "Triage your inbox before your morning subway commute"
+    ],
+    "relatedCities": ["san-francisco", "miami", "austin"],
+    "relatedIntegrations": ["slack", "email", "whatsapp"]
+  },
+  {
+    "slug": "austin",
+    "city": "Austin",
+    "country": "United States",
+    "emoji": "🤠",
+    "title": "AI Assistant Setup in Austin | OpenClaw",
+    "description": "Set up your personal AI assistant in Austin with OpenClaw. Perfect for Austin's thriving tech scene. Join ClawCon Austin.",
+    "seoKeywords": "AI assistant Austin, personal AI setup Austin TX, OpenClaw Austin, AI meetup Austin",
+    "localAngle": "<p>Austin is where tech meets creativity. As the <strong>Silicon Hills</strong> continues to attract major tech companies and startups alike, the city's builders need tools that keep up with their ambition. OpenClaw gives Austin's tech community a personal AI assistant that's as flexible as the city itself.</p><p>Whether you're working at a <strong>SXSW-born startup</strong>, running a creative agency on East 6th, or building the next big thing from a coworking space on South Congress, OpenClaw connects to your existing tools — <a href=\"/integrations/slack/\">Slack</a>, <a href=\"/integrations/discord/\">Discord</a>, <a href=\"/integrations/telegram/\">Telegram</a> — and handles the busywork so you can focus on building.</p>",
+    "useCases": [
+      "Automate standup reports for distributed Austin tech teams",
+      "Monitor social media and community channels for startup founders",
+      "Draft and send newsletter updates for creative agencies",
+      "Manage event logistics and attendee communications"
+    ],
+    "relatedCities": ["san-francisco", "new-york-city", "miami"],
+    "relatedIntegrations": ["slack", "discord", "telegram"]
+  },
+  {
+    "slug": "tel-aviv",
+    "city": "Tel Aviv",
+    "country": "Israel",
+    "emoji": "🇮🇱",
+    "title": "AI Assistant Setup in Tel Aviv | OpenClaw",
+    "description": "Set up your personal AI assistant in Tel Aviv with OpenClaw. Built for the Startup Nation's fast-paced tech ecosystem. Join ClawCon Tel Aviv.",
+    "seoKeywords": "AI assistant Tel Aviv, personal AI setup Israel, OpenClaw Tel Aviv, AI meetup Tel Aviv",
+    "localAngle": "<p>Tel Aviv — the heart of the <strong>Startup Nation</strong> — has the highest density of startups per capita in the world. The city's founders, engineers, and VCs move fast, and they need AI tools that move faster. OpenClaw is the personal AI assistant built for this kind of intensity.</p><p>From <strong>Rothschild Boulevard coworking spaces</strong> to the high-rises of Sarona, Tel Aviv's tech community thrives on efficiency. OpenClaw connects to <a href=\"/integrations/whatsapp/\">WhatsApp</a> (Israel's default messaging app), <a href=\"/integrations/slack/\">Slack</a>, <a href=\"/integrations/telegram/\">Telegram</a>, and more — giving you one AI that works across every channel.</p>",
+    "useCases": [
+      "Manage investor relations across US and Israeli time zones",
+      "Automate WhatsApp responses for Israeli business communications",
+      "Summarize daily news and market intelligence for VCs",
+      "Coordinate cross-border team communications"
+    ],
+    "relatedCities": ["london", "new-york-city", "san-francisco"],
+    "relatedIntegrations": ["whatsapp", "slack", "telegram"]
+  },
+  {
+    "slug": "miami",
+    "city": "Miami",
+    "country": "United States",
+    "emoji": "🌴",
+    "title": "AI Assistant Setup in Miami | OpenClaw",
+    "description": "Set up your personal AI assistant in Miami with OpenClaw. Perfect for Miami's growing tech and crypto scene. Join ClawCon Miami.",
+    "seoKeywords": "AI assistant Miami, personal AI setup Miami, OpenClaw Miami, AI meetup Miami",
+    "localAngle": "<p>Miami has transformed from beach paradise to <strong>tech hub</strong> in record time. With the explosion of Web3 companies, fintech startups, and LatAm-focused ventures, Miami's builders need AI that keeps up with the city's 24/7 energy. OpenClaw is that assistant.</p><p>Miami's unique position as a <strong>bridge between the US and Latin America</strong> means multilingual communication is essential. OpenClaw handles messages across <a href=\"/integrations/whatsapp/\">WhatsApp</a>, <a href=\"/integrations/sms/\">SMS</a>, and <a href=\"/integrations/email/\">Email</a> — in any language — so you can serve clients from Brickell to Buenos Aires.</p>",
+    "useCases": [
+      "Manage bilingual client communications (English/Spanish)",
+      "Automate crypto and fintech portfolio alerts",
+      "Handle real estate inquiry responses across platforms",
+      "Coordinate event logistics for Miami tech meetups"
+    ],
+    "relatedCities": ["new-york-city", "austin", "rio-de-janeiro"],
+    "relatedIntegrations": ["whatsapp", "sms", "email"]
+  },
+  {
+    "slug": "tokyo",
+    "city": "Tokyo",
+    "country": "Japan",
+    "emoji": "🗼",
+    "title": "AI Assistant Setup in Tokyo | OpenClaw",
+    "description": "Set up your personal AI assistant in Tokyo with OpenClaw. Built for Japan's innovation-driven tech scene. Join ClawCon Tokyo.",
+    "seoKeywords": "AI assistant Tokyo, personal AI setup Japan, OpenClaw Tokyo, AI meetup Tokyo",
+    "localAngle": "<p>Tokyo is where precision meets innovation. As <strong>Asia's largest tech hub</strong>, the city is home to global enterprises, cutting-edge robotics companies, and a thriving startup ecosystem in Shibuya and Roppongi. OpenClaw gives Tokyo's professionals an AI assistant that matches the city's legendary efficiency.</p><p>Japanese business culture values responsiveness and attention to detail. OpenClaw delivers both — connecting to <a href=\"/integrations/slack/\">Slack</a>, <a href=\"/integrations/discord/\">Discord</a>, <a href=\"/integrations/email/\">Email</a>, and <a href=\"/integrations/telegram/\">Telegram</a> so you never miss a message, whether it's from a client in Marunouchi or a partner in Silicon Valley.</p>",
+    "useCases": [
+      "Bridge time zone gaps with automated responses for global teams",
+      "Summarize meeting notes and action items in Japanese or English",
+      "Automate customer support for e-commerce businesses",
+      "Monitor and triage communications across Asian and Western platforms"
+    ],
+    "relatedCities": ["san-francisco", "tel-aviv", "london"],
+    "relatedIntegrations": ["slack", "discord", "email"]
+  },
+  {
+    "slug": "london",
+    "city": "London",
+    "country": "United Kingdom",
+    "emoji": "🇬🇧",
+    "title": "AI Assistant Setup in London | OpenClaw",
+    "description": "Set up your personal AI assistant in London with OpenClaw. Perfect for London's finance and tech ecosystem. Join ClawCon London.",
+    "seoKeywords": "AI assistant London, personal AI setup UK, OpenClaw London, AI meetup London",
+    "localAngle": "<p>London sits at the crossroads of global finance and European tech. From the <strong>fintech giants of Canary Wharf</strong> to the <strong>AI startups of King's Cross</strong>, the city's professionals need tools that work as hard as they do. OpenClaw is the personal AI assistant built for London's demanding pace.</p><p>With teams spread across European time zones and clients worldwide, London businesses need seamless communication. OpenClaw connects to <a href=\"/integrations/slack/\">Slack</a>, <a href=\"/integrations/whatsapp/\">WhatsApp</a>, <a href=\"/integrations/email/\">Email</a>, and <a href=\"/integrations/google-chat/\">Google Chat</a> — keeping you responsive from morning tea to after-hours pints.</p>",
+    "useCases": [
+      "Automate compliance reporting for fintech and banking teams",
+      "Manage cross-timezone client communications across Europe",
+      "Triage investor and board communications",
+      "Draft and schedule content for European market hours"
+    ],
+    "relatedCities": ["new-york-city", "tel-aviv", "vienna"],
+    "relatedIntegrations": ["slack", "whatsapp", "email", "google-chat"]
+  },
+  {
+    "slug": "cdmx",
+    "city": "CDMX (Mexico City)",
+    "country": "Mexico",
+    "emoji": "🇲🇽",
+    "title": "AI Assistant Setup in CDMX (Mexico City) | OpenClaw",
+    "description": "Set up your personal AI assistant in Mexico City with OpenClaw. Perfect for CDMX's booming tech and remote work scene. Join ClawCon CDMX.",
+    "seoKeywords": "AI assistant Mexico City, personal AI setup CDMX, OpenClaw CDMX, AI meetup Mexico City",
+    "localAngle": "<p>Mexico City — CDMX — has become one of the world's hottest destinations for <strong>remote workers, digital nomads, and LatAm startups</strong>. The city's affordable cost of living, vibrant culture, and growing tech scene have attracted builders from across the Americas. OpenClaw is the AI assistant that keeps up with CDMX's creative energy.</p><p>With <a href=\"/integrations/whatsapp/\">WhatsApp</a> as the dominant messaging platform in Mexico, OpenClaw's WhatsApp integration is essential here. Add <a href=\"/integrations/slack/\">Slack</a> and <a href=\"/integrations/telegram/\">Telegram</a>, and you've got an AI that works across every channel CDMX's international community uses.</p>",
+    "useCases": [
+      "Manage client communications in English and Spanish seamlessly",
+      "Automate responses on WhatsApp for Mexican business contacts",
+      "Coordinate remote team standups across North American time zones",
+      "Handle freelance project management and invoicing workflows"
+    ],
+    "relatedCities": ["miami", "austin", "rio-de-janeiro"],
+    "relatedIntegrations": ["whatsapp", "slack", "telegram"]
+  },
+  {
+    "slug": "rio-de-janeiro",
+    "city": "Rio de Janeiro",
+    "country": "Brazil",
+    "emoji": "🇧🇷",
+    "title": "AI Assistant Setup in Rio de Janeiro | OpenClaw",
+    "description": "Set up your personal AI assistant in Rio de Janeiro with OpenClaw. Built for Brazil's fast-growing tech ecosystem. Join ClawCon Rio.",
+    "seoKeywords": "AI assistant Rio de Janeiro, personal AI setup Brazil, OpenClaw Rio, AI meetup Rio de Janeiro",
+    "localAngle": "<p>Rio de Janeiro is where Brazil's creativity and entrepreneurial spirit collide. From <strong>Porto Maravilha's tech startups</strong> to the <strong>digital agencies of Leblon</strong>, Rio's professionals are building world-class companies in one of the world's most vibrant cities. OpenClaw gives them an AI assistant that matches their ambition.</p><p>Brazil runs on <a href=\"/integrations/whatsapp/\">WhatsApp</a> — it's the country's primary communication tool for both personal and business use. OpenClaw's deep WhatsApp integration makes it a natural fit. Add <a href=\"/integrations/email/\">Email</a> and <a href=\"/integrations/slack/\">Slack</a>, and you've got full coverage.</p>",
+    "useCases": [
+      "Automate WhatsApp business responses in Portuguese",
+      "Manage international client communications across time zones",
+      "Coordinate team operations for Brazilian startups",
+      "Handle customer support across WhatsApp and email simultaneously"
+    ],
+    "relatedCities": ["cdmx", "miami", "austin"],
+    "relatedIntegrations": ["whatsapp", "email", "slack"]
+  },
+  {
+    "slug": "san-francisco",
+    "city": "San Francisco",
+    "country": "United States",
+    "emoji": "🌉",
+    "title": "AI Assistant Setup in San Francisco | OpenClaw",
+    "description": "Set up your personal AI assistant in San Francisco with OpenClaw. Built for the Bay Area's AI-first tech community. Join ClawCon SF.",
+    "seoKeywords": "AI assistant San Francisco, personal AI setup SF Bay Area, OpenClaw San Francisco, AI meetup SF",
+    "localAngle": "<p>San Francisco is the <strong>world capital of AI</strong>. From OpenAI in the Mission to Anthropic in the Financial District, the Bay Area is where the future of artificial intelligence is being built. If you're here, you already know AI isn't optional — it's infrastructure. OpenClaw is the personal AI layer that ties everything together.</p><p>SF's engineers and founders live in <a href=\"/integrations/slack/\">Slack</a>, <a href=\"/integrations/discord/\">Discord</a>, and <a href=\"/integrations/telegram/\">Telegram</a>. OpenClaw plugs into all of them, giving you a single AI assistant that works across your entire communication stack — from investor DMs to team standups to customer support.</p>",
+    "useCases": [
+      "Automate investor updates and fundraising communication",
+      "Monitor Hacker News, Product Hunt, and social mentions",
+      "Manage multi-channel customer support for SaaS startups",
+      "Draft technical documentation and API guides with AI assistance"
+    ],
+    "relatedCities": ["new-york-city", "austin", "tokyo"],
+    "relatedIntegrations": ["slack", "discord", "telegram"]
+  },
+  {
+    "slug": "vienna",
+    "city": "Vienna",
+    "country": "Austria",
+    "emoji": "🇦🇹",
+    "title": "AI Assistant Setup in Vienna | OpenClaw",
+    "description": "Set up your personal AI assistant in Vienna with OpenClaw. Perfect for Austria's emerging tech scene. Join ClawCon Vienna.",
+    "seoKeywords": "AI assistant Vienna, personal AI setup Austria, OpenClaw Vienna, AI meetup Vienna",
+    "localAngle": "<p>Vienna consistently ranks as the <strong>world's most livable city</strong> — and its tech scene is catching up to match. With a growing ecosystem of startups, research institutions, and enterprise innovation labs, Vienna is becoming Central Europe's quiet tech powerhouse. OpenClaw brings AI-powered productivity to Vienna's discerning professionals.</p><p>Vienna's position as a <strong>gateway between Western and Eastern Europe</strong> means multilingual, cross-timezone communication is the norm. OpenClaw connects to <a href=\"/integrations/slack/\">Slack</a>, <a href=\"/integrations/email/\">Email</a>, <a href=\"/integrations/whatsapp/\">WhatsApp</a>, and <a href=\"/integrations/signal/\">Signal</a> (popular with privacy-conscious Europeans) — keeping you connected across the continent.</p>",
+    "useCases": [
+      "Manage multilingual communications across European markets",
+      "Automate reporting for enterprise innovation teams",
+      "Handle cross-border client communications (DACH region)",
+      "Coordinate research and academic collaboration workflows"
+    ],
+    "relatedCities": ["london", "tel-aviv", "tokyo"],
+    "relatedIntegrations": ["slack", "email", "whatsapp", "signal"]
+  }
+]
