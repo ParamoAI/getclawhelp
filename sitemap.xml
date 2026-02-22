@@ -2,130 +2,112 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://getclawhelp.com/</loc>
-    <lastmod>2026-02-21</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-02-22</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://getclawhelp.com/blog/</loc>
-    <lastmod>2026-02-21</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-02-22</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://getclawhelp.com/blog/what-is-an-api-explained-for-non-technical-people/</loc>
+    <loc>https://getclawhelp.com/consult/</loc>
     <lastmod>2026-02-22</lastmod>
-    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://getclawhelp.com/blog/what-is-openclaw/</loc>
+    <loc>https://getclawhelp.com/what-is-an-api-explained-for-non-technical-people/</loc>
     <lastmod>2026-02-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://getclawhelp.com/blog/openclaw-vps-setup-guide/</loc>
-    <lastmod>2026-02-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://getclawhelp.com/blog/openclaw-vs-chatgpt/</loc>
-    <lastmod>2026-02-21</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://getclawhelp.com/blog/ai-sales-assistant-openclaw/</loc>
+    <lastmod>2026-02-22</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://getclawhelp.com/blog/automate-customer-support-ai/</loc>
-    <lastmod>2026-02-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://getclawhelp.com/blog/openclaw-small-business-automation/</loc>
-    <lastmod>2026-02-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://getclawhelp.com/blog/ai-sales-assistant-openclaw/</loc>
-    <lastmod>2026-02-21</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-02-22</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://getclawhelp.com/blog/openclaw-automation-ideas/</loc>
-    <lastmod>2026-02-21</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-02-22</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://getclawhelp.com/consult/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- PSEO:START -->
-  <url>
-    <loc>https://getclawhelp.com/integrations/telegram/</loc>
+    <loc>https://getclawhelp.com/blog/openclaw-small-business-automation/</loc>
     <lastmod>2026-02-22</lastmod>
-    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://getclawhelp.com/integrations/slack/</loc>
+    <loc>https://getclawhelp.com/blog/openclaw-vps-setup-guide/</loc>
     <lastmod>2026-02-22</lastmod>
-    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://getclawhelp.com/integrations/whatsapp/</loc>
+    <loc>https://getclawhelp.com/blog/openclaw-vs-chatgpt/</loc>
     <lastmod>2026-02-22</lastmod>
-    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getclawhelp.com/blog/what-is-an-api-explained-for-non-technical-people/</loc>
+    <lastmod>2026-02-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getclawhelp.com/blog/what-is-openclaw/</loc>
+    <lastmod>2026-02-22</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://getclawhelp.com/integrations/discord/</loc>
     <lastmod>2026-02-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://getclawhelp.com/integrations/signal/</loc>
-    <lastmod>2026-02-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://getclawhelp.com/integrations/google-chat/</loc>
-    <lastmod>2026-02-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://getclawhelp.com/integrations/imessage/</loc>
-    <lastmod>2026-02-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://getclawhelp.com/integrations/irc/</loc>
-    <lastmod>2026-02-22</lastmod>
-    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://getclawhelp.com/integrations/email/</loc>
     <lastmod>2026-02-22</lastmod>
-    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getclawhelp.com/integrations/google-chat/</loc>
+    <lastmod>2026-02-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getclawhelp.com/integrations/imessage/</loc>
+    <lastmod>2026-02-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getclawhelp.com/integrations/irc/</loc>
+    <lastmod>2026-02-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getclawhelp.com/integrations/signal/</loc>
+    <lastmod>2026-02-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getclawhelp.com/integrations/slack/</loc>
+    <lastmod>2026-02-22</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://getclawhelp.com/integrations/sms/</loc>
     <lastmod>2026-02-22</lastmod>
-    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  <!-- PSEO:END -->
+  <url>
+    <loc>https://getclawhelp.com/integrations/telegram/</loc>
+    <lastmod>2026-02-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getclawhelp.com/integrations/whatsapp/</loc>
+    <lastmod>2026-02-22</lastmod>
+    <priority>0.7</priority>
+  </url>
 </urlset>
