@@ -1,0 +1,328 @@
+[
+  {
+    "slug": "telegram",
+    "platform": "Telegram",
+    "title": "How to Connect OpenClaw to Telegram: Complete Setup Guide",
+    "description": "Step-by-step guide to connecting OpenClaw to Telegram. Create a bot, configure webhooks, and run your AI assistant in any Telegram chat.",
+    "icon": "✈️",
+    "setupSteps": [
+      {
+        "title": "Create a Telegram Bot via BotFather",
+        "content": "<p>Open Telegram and search for <strong>@BotFather</strong>. Send <code>/newbot</code> and follow the prompts to name your bot. BotFather will give you a <strong>bot token</strong> — a long string like <code>7123456789:AAHx...</code>. Save this token securely; you'll need it in the next step.</p><p>Optionally, send <code>/setdescription</code> and <code>/setabouttext</code> to customize how your bot appears to users.</p>"
+      },
+      {
+        "title": "Configure OpenClaw's Telegram Channel",
+        "content": "<p>In your OpenClaw config file (<code>openclaw.json</code>), add the Telegram channel:</p><pre><code>{\n  \"channels\": {\n    \"telegram\": {\n      \"botToken\": \"YOUR_BOT_TOKEN_HERE\",\n      \"allowedUsers\": [\"your_telegram_user_id\"],\n      \"polling\": true\n    }\n  }\n}</code></pre><p>Set <code>polling: true</code> for simple setups (no public URL needed). For production, use webhooks with a public HTTPS endpoint instead.</p>"
+      },
+      {
+        "title": "Set Up Webhooks (Production)",
+        "content": "<p>For a production setup, configure a webhook so Telegram pushes messages to your server instead of OpenClaw polling for them:</p><pre><code>openclaw gateway config set telegram.webhook.url https://your-domain.com/telegram/webhook\nopenclaw gateway restart</code></pre><p>You'll need a valid SSL certificate. If you're running on a VPS with Nginx, use Let's Encrypt for free certificates.</p>"
+      },
+      {
+        "title": "Start OpenClaw and Test",
+        "content": "<p>Start (or restart) OpenClaw:</p><pre><code>openclaw gateway start</code></pre><p>Open your bot in Telegram and send a message. Your OpenClaw instance should respond. If it doesn't, check <code>openclaw gateway status</code> for errors.</p>"
+      }
+    ],
+    "useCases": [
+      "Personal AI assistant accessible from your phone anywhere",
+      "Group chat bot that answers team questions and runs automations",
+      "Customer support bot for Telegram-based communities",
+      "Automated notifications — server alerts, calendar reminders, sales updates"
+    ],
+    "platformNotes": "<p>Telegram is one of the most popular channels for OpenClaw because of its excellent bot API. Key advantages:</p><ul><li><strong>No approval process</strong> — create a bot instantly via BotFather</li><li><strong>Rich media support</strong> — send images, files, buttons, and inline keyboards</li><li><strong>Group chat support</strong> — add your bot to any group</li><li><strong>Free and unlimited</strong> — no per-message costs from Telegram</li></ul><p>Telegram's Bot API supports both long polling and webhooks. Polling is easier to set up (no public URL required), while webhooks are more efficient for production use.</p>",
+    "requirements": ["A Telegram account", "A bot token from @BotFather", "OpenClaw installed on a VPS or local machine", "A public HTTPS endpoint (for webhooks only)"]
+  },
+  {
+    "slug": "slack",
+    "platform": "Slack",
+    "title": "How to Connect OpenClaw to Slack: Complete Setup Guide",
+    "description": "Step-by-step guide to connecting OpenClaw to Slack. Create a Slack app, configure OAuth, and run your AI assistant in any Slack workspace.",
+    "icon": "💬",
+    "setupSteps": [
+      {
+        "title": "Create a Slack App",
+        "content": "<p>Go to <a href=\"https://api.slack.com/apps\">api.slack.com/apps</a> and click <strong>Create New App</strong>. Choose \"From scratch\" and give it a name (e.g., \"OpenClaw\"). Select your workspace.</p><p>Under <strong>OAuth & Permissions</strong>, add these bot token scopes:</p><ul><li><code>chat:write</code> — send messages</li><li><code>channels:history</code> — read channel messages</li><li><code>channels:read</code> — list channels</li><li><code>im:history</code> — read DMs</li><li><code>im:write</code> — send DMs</li><li><code>reactions:write</code> — add emoji reactions</li><li><code>users:read</code> — look up user info</li></ul>"
+      },
+      {
+        "title": "Install the App and Get Tokens",
+        "content": "<p>Click <strong>Install to Workspace</strong> and authorize. You'll get two important values:</p><ul><li><strong>Bot User OAuth Token</strong> (starts with <code>xoxb-</code>)</li><li><strong>App-Level Token</strong> — create one under <strong>Basic Information → App-Level Tokens</strong> with the <code>connections:write</code> scope (starts with <code>xapp-</code>)</li></ul><p>Enable <strong>Socket Mode</strong> under Settings — this lets OpenClaw connect without a public URL.</p>"
+      },
+      {
+        "title": "Configure OpenClaw",
+        "content": "<p>Add the Slack channel to your OpenClaw config:</p><pre><code>{\n  \"channels\": {\n    \"slack\": {\n      \"botToken\": \"xoxb-YOUR-BOT-TOKEN\",\n      \"appToken\": \"xapp-YOUR-APP-TOKEN\",\n      \"signingSecret\": \"YOUR_SIGNING_SECRET\"\n    }\n  }\n}</code></pre><p>The signing secret is found under <strong>Basic Information</strong> in your Slack app settings.</p>"
+      },
+      {
+        "title": "Enable Event Subscriptions",
+        "content": "<p>Under <strong>Event Subscriptions</strong>, subscribe to these bot events:</p><ul><li><code>message.channels</code> — messages in public channels</li><li><code>message.im</code> — direct messages</li><li><code>app_mention</code> — when someone @mentions your bot</li></ul><p>With Socket Mode enabled, you don't need a request URL. Start OpenClaw and it connects automatically:</p><pre><code>openclaw gateway start</code></pre>"
+      }
+    ],
+    "useCases": [
+      "Team AI assistant that answers questions in any channel",
+      "Automated standup reports and meeting summaries",
+      "Sales and CRM notifications piped into Slack channels",
+      "Internal knowledge base — ask your bot instead of searching docs"
+    ],
+    "platformNotes": "<p>Slack is the most feature-rich integration for OpenClaw in a business context. Key advantages:</p><ul><li><strong>Socket Mode</strong> — no public URL needed, works behind firewalls</li><li><strong>Thread support</strong> — bot replies stay organized in threads</li><li><strong>Rich formatting</strong> — markdown, code blocks, buttons, modals</li><li><strong>Workspace-wide access</strong> — one bot serves your entire team</li></ul><p>Slack's API has rate limits (roughly 1 message per second per channel). OpenClaw handles this automatically with built-in queuing.</p>",
+    "requirements": ["A Slack workspace (free or paid)", "Admin permissions to install apps", "OpenClaw installed on a VPS or local machine", "Bot and app-level tokens from Slack"]
+  },
+  {
+    "slug": "whatsapp",
+    "platform": "WhatsApp",
+    "title": "How to Connect OpenClaw to WhatsApp: Complete Setup Guide",
+    "description": "Step-by-step guide to connecting OpenClaw to WhatsApp. Set up the WhatsApp Business API or use a bridge to run your AI assistant on WhatsApp.",
+    "icon": "📱",
+    "setupSteps": [
+      {
+        "title": "Choose Your WhatsApp Integration Method",
+        "content": "<p>There are two main ways to connect OpenClaw to WhatsApp:</p><ul><li><strong>WhatsApp Business API (official)</strong> — requires a Meta Business account and verification. Best for businesses that need reliability and compliance.</li><li><strong>WhatsApp Web bridge (unofficial)</strong> — uses libraries like <code>whatsapp-web.js</code> or Baileys to connect via the WhatsApp Web protocol. Easier to set up but less stable.</li></ul><p>For most users, the official Business API is recommended. The bridge approach works for personal/experimental use.</p>"
+      },
+      {
+        "title": "Set Up WhatsApp Business API",
+        "content": "<p>Go to <a href=\"https://developers.facebook.com\">developers.facebook.com</a> and create a new app of type \"Business\". Add the WhatsApp product. You'll get:</p><ul><li>A <strong>Phone Number ID</strong></li><li>A <strong>WhatsApp Business Account ID</strong></li><li>A temporary <strong>access token</strong> (generate a permanent one via System Users)</li></ul><p>Set up a webhook URL where Meta will send incoming messages. You'll need a public HTTPS endpoint.</p>"
+      },
+      {
+        "title": "Configure OpenClaw for WhatsApp",
+        "content": "<p>Add the WhatsApp channel to your config:</p><pre><code>{\n  \"channels\": {\n    \"whatsapp\": {\n      \"provider\": \"business-api\",\n      \"phoneNumberId\": \"YOUR_PHONE_NUMBER_ID\",\n      \"accessToken\": \"YOUR_PERMANENT_TOKEN\",\n      \"verifyToken\": \"YOUR_WEBHOOK_VERIFY_TOKEN\",\n      \"webhookPath\": \"/whatsapp/webhook\"\n    }\n  }\n}</code></pre><p>The <code>verifyToken</code> is a string you choose — Meta uses it to verify your webhook endpoint.</p>"
+      },
+      {
+        "title": "Test and Go Live",
+        "content": "<p>Start OpenClaw and send a test message to your WhatsApp Business number:</p><pre><code>openclaw gateway start</code></pre><p>Note: With the Business API, you can only <em>respond</em> to messages within a 24-hour window unless you use approved message templates. Set up templates in the Meta Business dashboard for proactive outreach.</p>"
+      }
+    ],
+    "useCases": [
+      "Customer support on WhatsApp — the world's most popular messaging app",
+      "Personal AI assistant you can text from anywhere",
+      "Automated appointment reminders and confirmations",
+      "E-commerce order updates and tracking notifications"
+    ],
+    "platformNotes": "<p>WhatsApp has over 2 billion users worldwide, making it the largest messaging platform. Key considerations:</p><ul><li><strong>24-hour messaging window</strong> — you can only reply within 24 hours of the customer's last message (Business API)</li><li><strong>Message templates</strong> — required for sending messages outside the 24-hour window; must be pre-approved by Meta</li><li><strong>End-to-end encryption</strong> — WhatsApp messages are encrypted, but Business API messages are decrypted at Meta's servers</li><li><strong>Cost</strong> — Meta charges per conversation (pricing varies by country, starting around $0.005–$0.08 per conversation)</li></ul>",
+    "requirements": ["A Meta Business account (verified)", "A phone number dedicated to WhatsApp Business", "OpenClaw installed on a VPS with a public HTTPS endpoint", "An SSL certificate for webhook verification"]
+  },
+  {
+    "slug": "discord",
+    "platform": "Discord",
+    "title": "How to Connect OpenClaw to Discord: Complete Setup Guide",
+    "description": "Step-by-step guide to connecting OpenClaw to Discord. Create a bot, set permissions, and run your AI assistant in any Discord server.",
+    "icon": "🎮",
+    "setupSteps": [
+      {
+        "title": "Create a Discord Application and Bot",
+        "content": "<p>Go to the <a href=\"https://discord.com/developers/applications\">Discord Developer Portal</a> and click <strong>New Application</strong>. Name it (e.g., \"OpenClaw\") and go to the <strong>Bot</strong> tab.</p><p>Click <strong>Add Bot</strong>, then:</p><ul><li>Copy the <strong>bot token</strong> — you'll need this for OpenClaw</li><li>Enable <strong>Message Content Intent</strong> under Privileged Gateway Intents (required to read message content)</li><li>Enable <strong>Server Members Intent</strong> if you want user info</li></ul>"
+      },
+      {
+        "title": "Invite the Bot to Your Server",
+        "content": "<p>Go to <strong>OAuth2 → URL Generator</strong>. Select these scopes:</p><ul><li><code>bot</code></li><li><code>applications.commands</code></li></ul><p>Under Bot Permissions, select:</p><ul><li>Send Messages, Read Message History, Add Reactions, Embed Links, Attach Files, Use Slash Commands</li></ul><p>Copy the generated URL and open it in your browser. Select your server and authorize the bot.</p>"
+      },
+      {
+        "title": "Configure OpenClaw",
+        "content": "<p>Add Discord to your OpenClaw config:</p><pre><code>{\n  \"channels\": {\n    \"discord\": {\n      \"botToken\": \"YOUR_DISCORD_BOT_TOKEN\",\n      \"allowedGuilds\": [\"YOUR_SERVER_ID\"],\n      \"allowedChannels\": [\"CHANNEL_ID_1\", \"CHANNEL_ID_2\"]\n    }\n  }\n}</code></pre><p>To get server and channel IDs: enable Developer Mode in Discord settings (User Settings → Advanced → Developer Mode), then right-click on servers/channels to copy their IDs.</p>"
+      },
+      {
+        "title": "Start and Test",
+        "content": "<p>Start OpenClaw:</p><pre><code>openclaw gateway start</code></pre><p>Go to a channel where your bot has access and send a message mentioning it (e.g., <code>@OpenClaw what's the weather?</code>). The bot should respond in the channel.</p><p>You can also DM the bot directly for private conversations.</p>"
+      }
+    ],
+    "useCases": [
+      "Community management bot for Discord servers",
+      "AI-powered moderation assistant",
+      "Gaming community helper — look up stats, schedules, and info",
+      "Team collaboration bot for private Discord servers"
+    ],
+    "platformNotes": "<p>Discord is hugely popular for communities and increasingly for business teams. Key features for OpenClaw:</p><ul><li><strong>No public URL needed</strong> — Discord uses a WebSocket gateway, so your bot connects outbound</li><li><strong>Thread support</strong> — keep conversations organized</li><li><strong>Slash commands</strong> — register custom <code>/commands</code> for structured interactions</li><li><strong>Rich embeds</strong> — beautiful formatted messages with colors, images, and fields</li><li><strong>Free</strong> — no per-message costs from Discord</li></ul><p>Note: Discord requires the Message Content Intent for bots in 100+ servers. For private/small servers, it's automatically available.</p>",
+    "requirements": ["A Discord account", "A server where you have admin/manage permissions", "OpenClaw installed on a VPS or local machine", "Bot token from the Discord Developer Portal"]
+  },
+  {
+    "slug": "signal",
+    "platform": "Signal",
+    "title": "How to Connect OpenClaw to Signal: Complete Setup Guide",
+    "description": "Step-by-step guide to connecting OpenClaw to Signal. Use signal-cli or the Signal API to run a privacy-focused AI assistant.",
+    "icon": "🔒",
+    "setupSteps": [
+      {
+        "title": "Install signal-cli",
+        "content": "<p>Signal doesn't offer an official bot API, so we use <strong>signal-cli</strong>, an open-source command-line client. Install it on your server:</p><pre><code>wget https://github.com/AsamK/signal-cli/releases/latest/download/signal-cli-Linux.tar.gz\ntar xf signal-cli-Linux.tar.gz\nsudo mv signal-cli-*/bin/signal-cli /usr/local/bin/\nsudo mv signal-cli-*/lib /usr/local/lib/signal-cli</code></pre><p>Verify installation: <code>signal-cli --version</code></p>"
+      },
+      {
+        "title": "Register a Phone Number with Signal",
+        "content": "<p>You need a dedicated phone number for your bot. Register it with Signal:</p><pre><code>signal-cli -u +1YOUR_PHONE_NUMBER register\nsignal-cli -u +1YOUR_PHONE_NUMBER verify CODE_FROM_SMS</code></pre><p>Consider using a VoIP number or a cheap prepaid SIM dedicated to your bot. The number will appear as a regular Signal contact to other users.</p>"
+      },
+      {
+        "title": "Run signal-cli in Daemon Mode",
+        "content": "<p>Start signal-cli as a JSON-RPC daemon so OpenClaw can communicate with it:</p><pre><code>signal-cli -u +1YOUR_PHONE_NUMBER daemon --socket /tmp/signal-cli.sock</code></pre><p>For production, set this up as a systemd service so it starts automatically.</p>"
+      },
+      {
+        "title": "Configure OpenClaw",
+        "content": "<p>Add Signal to your OpenClaw config:</p><pre><code>{\n  \"channels\": {\n    \"signal\": {\n      \"provider\": \"signal-cli\",\n      \"socket\": \"/tmp/signal-cli.sock\",\n      \"phoneNumber\": \"+1YOUR_PHONE_NUMBER\",\n      \"allowedNumbers\": [\"+1TRUSTED_NUMBER\"]\n    }\n  }\n}</code></pre><p>The <code>allowedNumbers</code> field restricts who can interact with your bot. Important for security since anyone with the number could message it.</p>"
+      }
+    ],
+    "useCases": [
+      "Privacy-focused personal AI assistant",
+      "Secure team communication with AI capabilities",
+      "Encrypted notifications for sensitive alerts (security, finance)",
+      "Whistleblower or journalist support tool with end-to-end encryption"
+    ],
+    "platformNotes": "<p>Signal is the gold standard for private messaging. Connecting OpenClaw to Signal gives you an AI assistant with true end-to-end encryption. Key considerations:</p><ul><li><strong>No official bot API</strong> — relies on signal-cli, which is community-maintained</li><li><strong>End-to-end encrypted</strong> — messages are encrypted even from your server (signal-cli decrypts locally)</li><li><strong>Requires a real phone number</strong> — no way around this</li><li><strong>Group chat support</strong> — signal-cli can send and receive in Signal groups</li><li><strong>Less stable than official APIs</strong> — Signal protocol updates can temporarily break signal-cli</li></ul>",
+    "requirements": ["A dedicated phone number for Signal registration", "signal-cli installed on your server", "Java 21+ runtime (required by signal-cli)", "OpenClaw installed on a VPS"]
+  },
+  {
+    "slug": "google-chat",
+    "platform": "Google Chat",
+    "title": "How to Connect OpenClaw to Google Chat: Complete Setup Guide",
+    "description": "Step-by-step guide to connecting OpenClaw to Google Chat. Create a Google Chat app and run your AI assistant in Google Workspace.",
+    "icon": "🟢",
+    "setupSteps": [
+      {
+        "title": "Create a Google Cloud Project",
+        "content": "<p>Go to the <a href=\"https://console.cloud.google.com\">Google Cloud Console</a> and create a new project (or use an existing one). Enable the <strong>Google Chat API</strong> from the API Library.</p><p>Navigate to <strong>APIs & Services → Credentials</strong> and create a <strong>Service Account</strong>. Download the JSON key file — you'll need it for OpenClaw.</p>"
+      },
+      {
+        "title": "Configure the Google Chat App",
+        "content": "<p>In the Google Cloud Console, go to <strong>Google Chat API → Configuration</strong> and set up your app:</p><ul><li><strong>App name:</strong> OpenClaw</li><li><strong>Avatar URL:</strong> your bot's avatar</li><li><strong>Description:</strong> AI assistant powered by OpenClaw</li><li><strong>Functionality:</strong> Enable \"Receive 1:1 messages\" and \"Join spaces and group conversations\"</li><li><strong>Connection settings:</strong> Choose \"HTTP endpoint URL\" and enter your server's webhook URL</li></ul>"
+      },
+      {
+        "title": "Configure OpenClaw",
+        "content": "<p>Add Google Chat to your OpenClaw config:</p><pre><code>{\n  \"channels\": {\n    \"google-chat\": {\n      \"serviceAccountKey\": \"/path/to/service-account-key.json\",\n      \"webhookPath\": \"/google-chat/webhook\"\n    }\n  }\n}</code></pre><p>Make sure your server is accessible over HTTPS — Google Chat requires a verified endpoint.</p>"
+      },
+      {
+        "title": "Deploy and Test",
+        "content": "<p>Start OpenClaw and ensure your webhook endpoint is reachable:</p><pre><code>openclaw gateway start</code></pre><p>In Google Chat, search for your app by name and start a direct message. Your bot should respond to messages. You can also add it to Google Chat spaces (group conversations).</p><p><strong>Note:</strong> Google Chat apps are only available in Google Workspace organizations — not personal Gmail accounts.</p>"
+      }
+    ],
+    "useCases": [
+      "Enterprise AI assistant integrated with Google Workspace",
+      "Automated reporting in Google Chat spaces",
+      "IT helpdesk bot for Google Workspace organizations",
+      "Meeting prep and follow-up automation tied to Google Calendar"
+    ],
+    "platformNotes": "<p>Google Chat is the default messaging platform for Google Workspace (formerly G Suite) organizations. Key details:</p><ul><li><strong>Workspace only</strong> — Google Chat apps only work within Google Workspace organizations, not personal Gmail</li><li><strong>Card-based UI</strong> — supports rich interactive cards with buttons, forms, and images</li><li><strong>Google integration</strong> — natively connected to Calendar, Drive, Meet, and other Workspace tools</li><li><strong>Admin approval may be required</strong> — your Workspace admin might need to allowlist the app</li></ul>",
+    "requirements": ["A Google Workspace organization (not personal Gmail)", "Google Cloud project with Chat API enabled", "A service account with proper permissions", "OpenClaw installed on a server with a public HTTPS endpoint"]
+  },
+  {
+    "slug": "imessage",
+    "platform": "iMessage",
+    "title": "How to Connect OpenClaw to iMessage: Complete Setup Guide",
+    "description": "Step-by-step guide to connecting OpenClaw to iMessage. Use a Mac-based bridge to run your AI assistant through Apple Messages.",
+    "icon": "🍎",
+    "setupSteps": [
+      {
+        "title": "Understand the Limitations",
+        "content": "<p>Apple doesn't offer a public iMessage API. Connecting OpenClaw to iMessage requires a <strong>Mac that stays online</strong> running a bridge application. This Mac acts as the relay between iMessage and your OpenClaw instance.</p><p>The most reliable approach uses <strong>BlueBubbles</strong> or <strong>Beeper</strong> as the bridge layer. BlueBubbles is open-source and runs on your own Mac.</p>"
+      },
+      {
+        "title": "Set Up BlueBubbles on a Mac",
+        "content": "<p>Download <a href=\"https://bluebubbles.app\">BlueBubbles</a> and install it on a Mac that will stay online (a Mac Mini is ideal for this). During setup:</p><ul><li>Sign in with your Apple ID</li><li>Enable the BlueBubbles Private API (requires disabling SIP — follow their guide carefully)</li><li>Configure the server to use a Firebase Cloud Messaging project for notifications</li><li>Note your server URL and password</li></ul>"
+      },
+      {
+        "title": "Configure OpenClaw to Use the Bridge",
+        "content": "<p>OpenClaw connects to BlueBubbles via its REST API:</p><pre><code>{\n  \"channels\": {\n    \"imessage\": {\n      \"provider\": \"bluebubbles\",\n      \"serverUrl\": \"https://your-bluebubbles-server:1234\",\n      \"password\": \"YOUR_BLUEBUBBLES_PASSWORD\",\n      \"allowedContacts\": [\"+1YOUR_NUMBER\"]\n    }\n  }\n}</code></pre><p>The <code>allowedContacts</code> list is crucial — without it, anyone who texts your Apple ID gets an AI response.</p>"
+      },
+      {
+        "title": "Start and Test",
+        "content": "<p>Make sure BlueBubbles is running on your Mac, then start OpenClaw:</p><pre><code>openclaw gateway start</code></pre><p>Send an iMessage to the Apple ID signed into BlueBubbles. OpenClaw should receive it and reply as an iMessage. Replies appear as blue bubbles to the sender.</p>"
+      }
+    ],
+    "useCases": [
+      "AI assistant for iPhone users who live in the Apple ecosystem",
+      "Respond to personal messages when you're busy",
+      "Automated appointment scheduling via iMessage",
+      "Smart auto-replies with context awareness"
+    ],
+    "platformNotes": "<p>iMessage is the default messaging platform for Apple users. Integrating with it is non-trivial but valuable if your users are in the Apple ecosystem. Key considerations:</p><ul><li><strong>Requires a Mac</strong> — there's no way around this; Apple locks iMessage to their hardware</li><li><strong>Blue bubbles</strong> — replies appear as genuine iMessages, not SMS</li><li><strong>Rich features</strong> — supports images, reactions (tapbacks), group chats, and read receipts</li><li><strong>Stability concerns</strong> — Apple occasionally changes internal APIs, which can break bridges</li><li><strong>Privacy</strong> — messages pass through your own Mac; no third-party servers see the content</li></ul>",
+    "requirements": ["A Mac (Mini recommended) that stays powered on 24/7", "An Apple ID signed into Messages", "BlueBubbles or similar bridge software", "OpenClaw installed on a VPS or the same Mac"]
+  },
+  {
+    "slug": "irc",
+    "platform": "IRC",
+    "title": "How to Connect OpenClaw to IRC: Complete Setup Guide",
+    "description": "Step-by-step guide to connecting OpenClaw to IRC. Connect your AI assistant to any IRC network and channel.",
+    "icon": "📡",
+    "setupSteps": [
+      {
+        "title": "Choose Your IRC Network",
+        "content": "<p>OpenClaw can connect to any IRC network. Popular choices in 2026:</p><ul><li><strong>Libera.Chat</strong> — the spiritual successor to Freenode, home of most open-source projects</li><li><strong>OFTC</strong> — used by Debian and other infrastructure projects</li><li><strong>Your company's private IRC server</strong></li></ul><p>Register a nickname for your bot on your chosen network. On Libera.Chat:</p><pre><code>/msg NickServ REGISTER password email@example.com</code></pre>"
+      },
+      {
+        "title": "Configure OpenClaw for IRC",
+        "content": "<p>Add IRC to your OpenClaw config:</p><pre><code>{\n  \"channels\": {\n    \"irc\": {\n      \"server\": \"irc.libera.chat\",\n      \"port\": 6697,\n      \"ssl\": true,\n      \"nick\": \"OpenClawBot\",\n      \"password\": \"YOUR_NICKSERV_PASSWORD\",\n      \"channels\": [\"#your-channel\"],\n      \"allowedNicks\": [\"yournick\"]\n    }\n  }\n}</code></pre><p>Always use port <code>6697</code> with <code>ssl: true</code> for encrypted connections.</p>"
+      },
+      {
+        "title": "Start and Join Channels",
+        "content": "<p>Start OpenClaw:</p><pre><code>openclaw gateway start</code></pre><p>The bot will connect to the IRC server, authenticate with NickServ, and join the configured channels. Users can interact by mentioning the bot's nick or sending it a private message.</p>"
+      }
+    ],
+    "useCases": [
+      "AI assistant for open-source project channels",
+      "Automated documentation lookup in dev channels",
+      "Log aggregation and alerting via IRC",
+      "Old-school chat bot with modern AI capabilities"
+    ],
+    "platformNotes": "<p>IRC has been around since 1988 and is still used heavily in open-source and infrastructure communities. Key features:</p><ul><li><strong>No approval process</strong> — connect to any public network instantly</li><li><strong>Lightweight protocol</strong> — minimal resource usage</li><li><strong>No rate limits</strong> — though some networks throttle excessive messaging</li><li><strong>Plain text</strong> — no rich formatting, but code-friendly</li><li><strong>Multiple networks</strong> — OpenClaw can connect to several IRC networks simultaneously</li></ul>",
+    "requirements": ["An IRC network to connect to", "A registered nickname (recommended)", "OpenClaw installed on a VPS or local machine"]
+  },
+  {
+    "slug": "email",
+    "platform": "Email",
+    "title": "How to Connect OpenClaw to Email: Complete Setup Guide",
+    "description": "Step-by-step guide to connecting OpenClaw to Email via IMAP/SMTP. Build an AI assistant that reads, drafts, and sends emails.",
+    "icon": "📧",
+    "setupSteps": [
+      {
+        "title": "Set Up an Email Account for Your Bot",
+        "content": "<p>Create a dedicated email address for OpenClaw, or use an existing one. Popular options:</p><ul><li><strong>Gmail</strong> — enable \"App Passwords\" (requires 2FA enabled). Go to Google Account → Security → App Passwords and generate one.</li><li><strong>Custom domain</strong> — set up a mailbox like <code>claw@yourdomain.com</code> via your hosting provider</li><li><strong>Fastmail, ProtonMail Bridge, or any IMAP provider</strong></li></ul><p>For Gmail, the IMAP server is <code>imap.gmail.com</code> and SMTP is <code>smtp.gmail.com</code>.</p>"
+      },
+      {
+        "title": "Configure OpenClaw for IMAP/SMTP",
+        "content": "<p>Add the email channel to your config:</p><pre><code>{\n  \"channels\": {\n    \"email\": {\n      \"imap\": {\n        \"host\": \"imap.gmail.com\",\n        \"port\": 993,\n        \"user\": \"your-bot@gmail.com\",\n        \"password\": \"YOUR_APP_PASSWORD\",\n        \"tls\": true\n      },\n      \"smtp\": {\n        \"host\": \"smtp.gmail.com\",\n        \"port\": 465,\n        \"user\": \"your-bot@gmail.com\",\n        \"password\": \"YOUR_APP_PASSWORD\",\n        \"secure\": true\n      },\n      \"pollIntervalMs\": 30000,\n      \"allowedSenders\": [\"you@example.com\"]\n    }\n  }\n}</code></pre><p>The <code>pollIntervalMs</code> setting controls how often OpenClaw checks for new emails (30 seconds above).</p>"
+      },
+      {
+        "title": "Set Up Email Filtering (Optional)",
+        "content": "<p>You probably don't want OpenClaw responding to every email. Configure filters:</p><ul><li><strong>allowedSenders</strong> — only process emails from specific addresses</li><li><strong>Subject prefix</strong> — only process emails with a specific subject prefix like <code>[claw]</code></li><li><strong>Label/folder filtering</strong> — in Gmail, use a filter to label certain emails, then configure OpenClaw to only read that label</li></ul>"
+      },
+      {
+        "title": "Start and Test",
+        "content": "<p>Start OpenClaw:</p><pre><code>openclaw gateway start</code></pre><p>Send an email to your bot's address from an allowed sender. OpenClaw will read it, process it, and reply via email. Check your inbox for the response.</p>"
+      }
+    ],
+    "useCases": [
+      "AI email assistant that drafts replies to common inquiries",
+      "Automated customer support via email",
+      "Email triage — summarize, categorize, and prioritize your inbox",
+      "Scheduled email reports and digests"
+    ],
+    "platformNotes": "<p>Email is universal — everyone has it, every business uses it. Key advantages of the OpenClaw email integration:</p><ul><li><strong>Universal reach</strong> — works with anyone who has an email address</li><li><strong>No API approval needed</strong> — IMAP/SMTP is an open standard</li><li><strong>Asynchronous</strong> — perfect for tasks that don't need instant responses</li><li><strong>Attachment support</strong> — process PDFs, images, spreadsheets attached to emails</li><li><strong>Works with any provider</strong> — Gmail, Outlook, Fastmail, self-hosted, anything with IMAP</li></ul>",
+    "requirements": ["An email account with IMAP/SMTP access", "App password or application-specific credentials", "OpenClaw installed on a VPS or local machine"]
+  },
+  {
+    "slug": "sms",
+    "platform": "SMS",
+    "title": "How to Connect OpenClaw to SMS: Complete Setup Guide",
+    "description": "Step-by-step guide to connecting OpenClaw to SMS via Twilio. Build an AI assistant that sends and receives text messages.",
+    "icon": "📲",
+    "setupSteps": [
+      {
+        "title": "Set Up a Twilio Account",
+        "content": "<p>Go to <a href=\"https://www.twilio.com\">twilio.com</a> and create an account. Twilio is the most popular SMS API provider. From the console, you'll need:</p><ul><li><strong>Account SID</strong></li><li><strong>Auth Token</strong></li></ul><p>Purchase a phone number from the <strong>Phone Numbers</strong> section. Choose a number with SMS capability. Twilio numbers start at $1.15/month (US numbers).</p>"
+      },
+      {
+        "title": "Configure the Webhook",
+        "content": "<p>In the Twilio Console, go to your phone number's settings and set the <strong>\"When a message comes in\"</strong> webhook to your OpenClaw server:</p><pre><code>https://your-server.com/sms/webhook</code></pre><p>Set the HTTP method to <strong>POST</strong>. This tells Twilio to forward incoming SMS messages to your OpenClaw instance.</p>"
+      },
+      {
+        "title": "Configure OpenClaw for Twilio SMS",
+        "content": "<p>Add SMS to your OpenClaw config:</p><pre><code>{\n  \"channels\": {\n    \"sms\": {\n      \"provider\": \"twilio\",\n      \"accountSid\": \"YOUR_ACCOUNT_SID\",\n      \"authToken\": \"YOUR_AUTH_TOKEN\",\n      \"phoneNumber\": \"+1YOUR_TWILIO_NUMBER\",\n      \"webhookPath\": \"/sms/webhook\",\n      \"allowedNumbers\": [\"+1YOUR_PERSONAL_NUMBER\"]\n    }\n  }\n}</code></pre>"
+      },
+      {
+        "title": "Start and Test",
+        "content": "<p>Start OpenClaw:</p><pre><code>openclaw gateway start</code></pre><p>Send a text message to your Twilio number from your personal phone. OpenClaw will process the message and reply via SMS. You should see the response within a few seconds.</p><p><strong>Cost note:</strong> Twilio charges per message — roughly $0.0079/message for US numbers. For high-volume use, consider Twilio's committed-use discounts.</p>"
+      }
+    ],
+    "useCases": [
+      "AI assistant via text message — works on any phone, no apps needed",
+      "Appointment reminders and confirmations via SMS",
+      "Two-way customer support for users who prefer texting",
+      "Automated alerts and notifications to any phone number"
+    ],
+    "platformNotes": "<p>SMS reaches every phone on earth — no app downloads required. Key details:</p><ul><li><strong>Universal reach</strong> — works on smartphones and feature phones alike</li><li><strong>No app required</strong> — recipients don't need to install anything</li><li><strong>Per-message cost</strong> — Twilio charges ~$0.0079/segment for US SMS (160 characters per segment)</li><li><strong>MMS support</strong> — send and receive images and media via Twilio</li><li><strong>Carrier regulations</strong> — US carriers require A2P 10DLC registration for business texting; Twilio handles the compliance</li><li><strong>Character limits</strong> — SMS messages are limited to 160 characters per segment; longer messages are split</li></ul>",
+    "requirements": ["A Twilio account (or alternative SMS API provider)", "A purchased phone number with SMS capability", "OpenClaw installed on a VPS with a public HTTPS endpoint", "Webhook URL accessible from the internet"]
+  }
+]
