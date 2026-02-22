@@ -307,7 +307,39 @@
         const btn = document.getElementById('submitBtn');
         const errEl = document.getElementById('formError');
         const successEl = document.getElementById('successMsg');
-        const TALLY_URL = 'https://tally.so/r/9qWarQ';
+
+        // Tally field group UUIDs (from form config)
+        const FIELDS = {
+            name: '89e28370-2808-4ad1-ab8d-315c3de756f9',
+            email: '1dc99ea3-7433-41c2-b210-19f35eae47ba',
+            category: '8fc931d6-0823-4d9d-800f-3bcf7beb20f1',
+            urgency: '24f37c5d-d27b-4849-9782-0822c6b9fa6d',
+            description: '398d7ff1-1025-4ab8-949c-5dce27d94bc0'
+        };
+
+        // Tally dropdown option UUIDs
+        const CATEGORY_OPTIONS = {
+            'Setup & Installation': 'c5a136f6-4870-4b59-bbc2-9d7cd42f71fe',
+            'Custom Agent Development': '43556a92-934c-4710-826a-9b080be1326b',
+            'Workflow Automation': 'd29e42ef-a244-4136-ab14-8a3dd6604131',
+            'Architecture Consulting': '8f924d79-aada-4129-9327-a9630de64849',
+            'Maintenance & Support': 'd5ede757-6dd3-49dc-bf7d-43e02a594c04',
+            'Other': 'aee32e0d-d012-486a-baa8-a5e58becf60a'
+        };
+
+        const URGENCY_OPTIONS = {
+            'Just exploring': '6bab3f6b-4fd9-4e4a-a761-9c9aeff9c1dc',
+            'This month': '9ecc4272-a215-4afa-a19b-b37a5c4b385e',
+            'This week': '0b1c209d-a569-464c-952b-f735bf36ef76',
+            'Urgent': '175bade3-bb21-461f-9522-0176a73529a1'
+        };
+
+        function uuid() {
+            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+                var r = Math.random() * 16 | 0;
+                return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+            });
+        }
 
         form.addEventListener('submit', async function(e) {
             e.preventDefault();
@@ -317,38 +349,41 @@
             btn.disabled = true;
             btn.textContent = 'Submitting...';
 
-            const data = {
-                name: document.getElementById('fname').value,
-                email: document.getElementById('femail').value,
-                category: document.getElementById('fcategory').value,
-                urgency: document.getElementById('furgency').value || '',
-                budget: document.getElementById('fbudget').value || '',
-                description: document.getElementById('fdesc').value
-            };
+            const categoryVal = document.getElementById('fcategory').value;
+            const urgencyVal = document.getElementById('furgency').value;
+
+            const responses = {};
+            responses[FIELDS.name] = document.getElementById('fname').value;
+            responses[FIELDS.email] = document.getElementById('femail').value;
+            responses[FIELDS.description] = document.getElementById('fdesc').value;
+            if (categoryVal && CATEGORY_OPTIONS[categoryVal]) {
+                responses[FIELDS.category] = CATEGORY_OPTIONS[categoryVal];
+            }
+            if (urgencyVal && URGENCY_OPTIONS[urgencyVal]) {
+                responses[FIELDS.urgency] = URGENCY_OPTIONS[urgencyVal];
+            }
 
             try {
-                // Submit to Tally via their form endpoint
-                const formData = new FormData();
-                formData.append('name', data.name);
-                formData.append('email', data.email);
-                formData.append('category', data.category);
-                formData.append('urgency', data.urgency);
-                formData.append('budget', data.budget);
-                formData.append('description', data.description);
-
-                await fetch(TALLY_URL, {
+                const res = await fetch('https://tally.so/api/forms/9qWarQ/respond', {
                     method: 'POST',
-                    body: formData,
-                    mode: 'no-cors' // Tally doesn't return CORS headers for cross-origin
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        sessionUuid: uuid(),
+                        respondentUuid: uuid(),
+                        isCompleted: true,
+                        responses: responses
+                    })
                 });
 
-                // Show success (no-cors means we can't read the response, but submission goes through)
+                if (!res.ok) throw new Error('Submission failed');
+
                 form.style.display = 'none';
                 successEl.classList.add('active');
             } catch (err) {
-                // If fetch fails, redirect to Tally form directly as fallback
-                const params = new URLSearchParams(data);
-                window.location.href = TALLY_URL + '?' + params.toString();
+                errEl.textContent = 'Something went wrong. Please try again.';
+                errEl.classList.add('active');
+                btn.disabled = false;
+                btn.innerHTML = 'Submit Request <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
             }
         });
     })();
