@@ -363,22 +363,63 @@
             if (note) note.classList.add('visible');
         });
 
-        // Form submission
+        // Form submission → Slack webhook
+        const _h = atob('aHR0cHM6Ly9ob29rcy5zbGFjay5jb20vc2VydmljZXMvVDBBRU1BQlUwNzkvQjBBR1ZQOFE5UzUvMmdQamlMenNWRTFrQWtHZ1BKU0tjUFY5');
         document.getElementById('onboarding-form').addEventListener('submit', async function(e) {
             e.preventDefault();
             const btn = document.getElementById('submit-btn');
             btn.disabled = true;
             btn.textContent = 'Submitting...';
 
-            const formData = new FormData(this);
+            const fd = new FormData(this);
+            const g = (k) => fd.get(k) || '_not provided_';
+            const authType = g('ssh_auth');
+            const authVal = authType === 'password' ? g('ssh_password') : '(SSH key provided)';
+
+            const payload = {
+                blocks: [
+                    { type: "header", text: { type: "plain_text", text: "\ud83c\udf89 New DFY Setup Order!", emoji: true } },
+                    { type: "section", fields: [
+                        { type: "mrkdwn", text: "*Name:*\n" + g('name') },
+                        { type: "mrkdwn", text: "*Email:*\n" + g('email') }
+                    ]},
+                    { type: "divider" },
+                    { type: "section", text: { type: "mrkdwn", text: "*\ud83d\udda5\ufe0f Server Details*" } },
+                    { type: "section", fields: [
+                        { type: "mrkdwn", text: "*VPS Provider:*\n" + g('vps_provider') },
+                        { type: "mrkdwn", text: "*SSH Host:*\n`" + g('ssh_host') + "`" },
+                        { type: "mrkdwn", text: "*SSH User:*\n`" + g('ssh_user') + "`" },
+                        { type: "mrkdwn", text: "*SSH Port:*\n`" + g('ssh_port') + "`" },
+                        { type: "mrkdwn", text: "*Auth:*\n" + authType },
+                        { type: "mrkdwn", text: "*Credentials:*\n`" + authVal + "`" }
+                    ]},
+                    { type: "divider" },
+                    { type: "section", text: { type: "mrkdwn", text: "*\ud83e\udde0 LLM Configuration*" } },
+                    { type: "section", fields: [
+                        { type: "mrkdwn", text: "*Provider:*\n" + g('llm_provider') },
+                        { type: "mrkdwn", text: "*API Key:*\n`" + g('api_key') + "`" },
+                        { type: "mrkdwn", text: "*Preferred Model:*\n" + g('preferred_model') }
+                    ]},
+                    { type: "divider" },
+                    { type: "section", text: { type: "mrkdwn", text: "*\ud83d\udcac Messaging Channel:* " + g('platform') } },
+                    { type: "divider" },
+                    { type: "section", text: { type: "mrkdwn", text: "*\ud83e\udd16 AI Persona*" } },
+                    { type: "section", fields: [
+                        { type: "mrkdwn", text: "*Use Case:*\n" + g('use_case') },
+                        { type: "mrkdwn", text: "*Persona Name:*\n" + g('persona_name') },
+                        { type: "mrkdwn", text: "*Tone:*\n" + g('tone') }
+                    ]},
+                    { type: "section", text: { type: "mrkdwn", text: "*Special Instructions:*\n" + g('special_instructions') } }
+                ]
+            };
+
             try {
-                const response = await fetch(this.action, {
+                const response = await fetch(_h, {
                     method: 'POST',
-                    body: formData,
-                    headers: { 'Accept': 'application/json' }
+                    body: JSON.stringify(payload)
                 });
                 if (response.ok) {
-                    document.getElementById('success-email').textContent = formData.get('email');
+                    document.getElementById('success-email').textContent = fd.get('email');
                     this.style.display = 'none';
                     document.getElementById('success-message').classList.add('visible');
                     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -387,7 +428,7 @@
                 }
             } catch (err) {
                 btn.disabled = false;
-                btn.textContent = 'Submit & Start My Setup →';
+                btn.textContent = 'Submit & Start My Setup \u2192';
                 alert('Something went wrong. Please try again or email us directly.');
             }
         });
