@@ -26,6 +26,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://getclawhelp.com/terms/</loc>
+    <lastmod>2026-02-23</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://getclawhelp.com/what-is-an-api-explained-for-non-technical-people/</loc>
     <lastmod>2026-02-23</lastmod>
     <priority>0.8</priority>
