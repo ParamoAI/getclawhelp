@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17920782524"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17920782524');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onboarding — Done-For-You OpenClaw Setup | GetClawHelp</title>
+    <meta name="description" content="Complete your onboarding form to get your Done-For-You OpenClaw setup started. We'll have your AI assistant running within 48 hours.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://getclawhelp.com/dfysetup/onboarding/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #111111;
+            --bg-card: #1a1a1a;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --accent: #ff6b4a;
+            --accent-hover: #ff8266;
+            --teal: #4ecdc4;
+            --border: #2a2a2a;
+        }
+
+        body {
+            font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .bg-gradient {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background:
+                radial-gradient(ellipse at 20% 20%, rgba(255, 107, 74, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(78, 205, 196, 0.06) 0%, transparent 50%),
+                var(--bg-primary);
+            z-index: -1;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        /* Navigation */
+        nav { padding: 24px 0; border-bottom: 1px solid var(--border); }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--text-primary); text-decoration: none; display: flex; align-items: center; gap: 8px; }
+        .logo-icon { font-size: 1.8rem; }
+        .nav-links { display: flex; align-items: center; gap: 32px; }
+        .nav-links a { color: var(--text-secondary); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: color 0.2s ease; }
+        .nav-links a:hover { color: var(--teal); }
+        .nav-links a.active { color: var(--text-primary); }
+
+        /* Hero */
+        .hero { padding: 60px 0 40px; text-align: center; }
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; line-height: 1.1; margin-bottom: 16px;
+        }
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, var(--teal) 0%, #2dd4bf 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .hero-subtitle { font-size: 1.125rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto; }
+
+        /* Form Container */
+        .form-container { max-width: 720px; margin: 0 auto; padding: 0 24px 80px; }
+
+        .form-section {
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px;
+            padding: 32px; margin-bottom: 24px;
+        }
+        .form-section h2 { font-size: 1.25rem; margin-bottom: 4px; }
+        .form-section .section-desc { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 24px; }
+
+        .field { margin-bottom: 20px; }
+        .field:last-child { margin-bottom: 0; }
+        .field label { display: block; font-weight: 500; font-size: 0.95rem; margin-bottom: 6px; }
+        .field .hint { color: var(--text-secondary); font-size: 0.825rem; margin-bottom: 6px; }
+
+        input[type="text"], input[type="email"], input[type="number"], input[type="password"],
+        select, textarea {
+            width: 100%; padding: 12px 16px;
+            background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 10px;
+            color: var(--text-primary); font-family: inherit; font-size: 0.95rem;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            outline: none;
+        }
+        input:focus, select:focus, textarea:focus {
+            border-color: var(--teal); box-shadow: 0 0 0 3px rgba(78, 205, 196, 0.15);
+        }
+        textarea { min-height: 100px; resize: vertical; }
+        select { cursor: pointer; appearance: auto; }
+
+        input::placeholder, textarea::placeholder { color: #555; }
+
+        /* Radio group */
+        .radio-group { display: flex; gap: 16px; margin-bottom: 8px; }
+        .radio-group label {
+            display: flex; align-items: center; gap: 8px; cursor: pointer; font-weight: 400;
+            padding: 10px 20px; border: 1px solid var(--border); border-radius: 10px;
+            transition: border-color 0.2s ease; background: var(--bg-secondary);
+        }
+        .radio-group label:hover { border-color: var(--teal); }
+        .radio-group input[type="radio"] { accent-color: var(--teal); width: auto; }
+
+        .conditional { display: none; margin-top: 12px; }
+        .conditional.visible { display: block; }
+
+        .security-note {
+            color: var(--text-secondary); font-size: 0.85rem; margin-top: 16px;
+            padding: 12px 16px; background: rgba(78, 205, 196, 0.05); border-radius: 10px;
+            border: 1px solid rgba(78, 205, 196, 0.15);
+        }
+
+        .platform-note {
+            display: none; margin-top: 8px; padding: 10px 14px;
+            background: rgba(78, 205, 196, 0.05); border-radius: 8px; border: 1px solid rgba(78, 205, 196, 0.15);
+            color: var(--teal); font-size: 0.875rem;
+        }
+        .platform-note.visible { display: block; }
+
+        /* Submit */
+        .btn-primary {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: linear-gradient(135deg, var(--accent) 0%, #ff8855 100%);
+            color: white; padding: 18px 40px; border-radius: 12px;
+            font-size: 1.125rem; font-weight: 600; text-decoration: none;
+            transition: all 0.3s ease; box-shadow: 0 4px 24px rgba(255, 107, 74, 0.3);
+            border: none; cursor: pointer; font-family: inherit; width: 100%; justify-content: center;
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(255, 107, 74, 0.4); }
+        .btn-primary:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+        /* Success */
+        .success-message {
+            display: none; text-align: center; padding: 60px 32px;
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px;
+        }
+        .success-message.visible { display: block; }
+        .success-message .emoji { font-size: 3rem; margin-bottom: 16px; }
+        .success-message h2 { font-size: 1.5rem; margin-bottom: 12px; }
+        .success-message p { color: var(--text-secondary); font-size: 1rem; max-width: 500px; margin: 0 auto; }
+        .success-message .email-highlight { color: var(--teal); font-weight: 600; }
+
+        /* Footer */
+        footer { padding: 40px 0; border-top: 1px solid var(--border); text-align: center; color: var(--text-secondary); font-size: 0.875rem; }
+        footer a { color: var(--accent); text-decoration: none; }
+
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        @media (max-width: 768px) {
+            .hero { padding: 40px 0 24px; }
+            .form-section { padding: 24px; }
+            .radio-group { flex-direction: column; gap: 8px; }
+            .btn-primary { padding: 16px 32px; font-size: 1rem; }
+            .nav-links { gap: 16px; }
+            .nav-links a { font-size: 0.85rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+
+    <nav>
+        <div class="container nav-content">
+            <a href="/" class="logo"><span class="logo-icon">🦞</span><span>Get Claw Help</span></a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/consult/">Custom Solutions</a>
+                <a href="/dfysetup/" class="active">DFY Setup</a>
+                <a href="/blog/">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Welcome! Let's Get You <span class="highlight">Set Up</span></h1>
+            <p class="hero-subtitle">Fill out the details below and we'll have your OpenClaw instance running within 48 hours.</p>
+        </div>
+    </section>
+
+    <div class="form-container">
+        <form id="onboarding-form" action="https://formspree.io/f/PLACEHOLDER" method="POST">
+            <input type="hidden" name="_form" value="dfysetup-onboarding">
+
+            <!-- Section 1: Contact Info -->
+            <div class="form-section">
+                <h2>📋 Contact Info</h2>
+                <p class="section-desc">So we know who to reach when your setup is ready.</p>
+                <div class="field">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required placeholder="Jane Smith">
+                </div>
+                <div class="field">
+                    <label for="email">Email *</label>
+                    <p class="hint">Use the same email you checked out with</p>
+                    <input type="email" id="email" name="email" required placeholder="jane@example.com">
+                </div>
+            </div>
+
+            <!-- Section 2: Server Details -->
+            <div class="form-section">
+                <h2>🖥️ Server Details</h2>
+                <p class="section-desc">We need SSH access to install OpenClaw on your VPS.</p>
+                <div class="field">
+                    <label for="vps_provider">VPS Provider *</label>
+                    <select id="vps_provider" name="vps_provider" required>
+                        <option value="" disabled selected>Select your provider</option>
+                        <option value="DigitalOcean">DigitalOcean</option>
+                        <option value="Hetzner">Hetzner</option>
+                        <option value="Vultr">Vultr</option>
+                        <option value="Linode">Linode</option>
+                        <option value="AWS">AWS</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="ssh_host">SSH Host / IP Address *</label>
+                    <input type="text" id="ssh_host" name="ssh_host" required placeholder="123.45.67.89">
+                </div>
+                <div class="field">
+                    <label for="ssh_user">SSH Username *</label>
+                    <input type="text" id="ssh_user" name="ssh_user" required value="root">
+                </div>
+                <div class="field">
+                    <label for="ssh_port">SSH Port</label>
+                    <input type="number" id="ssh_port" name="ssh_port" value="22" min="1" max="65535">
+                </div>
+                <div class="field">
+                    <label>SSH Authentication *</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="ssh_auth" value="password" required> Password</label>
+                        <label><input type="radio" name="ssh_auth" value="key"> SSH Key</label>
+                    </div>
+                    <div id="ssh-password-field" class="conditional">
+                        <label for="ssh_password">SSH Password</label>
+                        <input type="password" id="ssh_password" name="ssh_password" placeholder="Your SSH password">
+                    </div>
+                    <div id="ssh-key-field" class="conditional">
+                        <label for="ssh_key">SSH Private Key</label>
+                        <textarea id="ssh_key" name="ssh_key" placeholder="Paste your private key here (-----BEGIN OPENSSH PRIVATE KEY-----)"></textarea>
+                    </div>
+                </div>
+                <div class="security-note">🔒 Your credentials are encrypted and only used during setup. We delete them after completion.</div>
+            </div>
+
+            <!-- Section 3: LLM Configuration -->
+            <div class="form-section">
+                <h2>🧠 LLM Configuration</h2>
+                <p class="section-desc">Which AI model should power your assistant?</p>
+                <div class="field">
+                    <label for="llm_provider">LLM Provider *</label>
+                    <select id="llm_provider" name="llm_provider" required>
+                        <option value="" disabled selected>Select your provider</option>
+                        <option value="Anthropic/Claude">Anthropic / Claude</option>
+                        <option value="OpenAI/GPT">OpenAI / GPT</option>
+                        <option value="Google/Gemini">Google / Gemini</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="api_key">API Key *</label>
+                    <input type="password" id="api_key" name="api_key" required placeholder="sk-...">
+                </div>
+                <div class="field">
+                    <label for="preferred_model">Preferred Model</label>
+                    <input type="text" id="preferred_model" name="preferred_model" placeholder="e.g. claude-sonnet-4, gpt-4o">
+                </div>
+            </div>
+
+            <!-- Section 4: Messaging Channel -->
+            <div class="form-section">
+                <h2>💬 Messaging Channel</h2>
+                <p class="section-desc">Where do you want to chat with your AI assistant?</p>
+                <div class="field">
+                    <label for="platform">Platform *</label>
+                    <select id="platform" name="platform" required>
+                        <option value="" disabled selected>Select your platform</option>
+                        <option value="WhatsApp">📱 WhatsApp</option>
+                        <option value="Telegram">✈️ Telegram</option>
+                        <option value="Slack">💼 Slack</option>
+                        <option value="Discord">🎮 Discord</option>
+                    </select>
+                    <div id="note-WhatsApp" class="platform-note">📱 We'll help you set up the WhatsApp Business API</div>
+                    <div id="note-Telegram" class="platform-note">✈️ You'll need a Telegram Bot Token from @BotFather</div>
+                    <div id="note-Slack" class="platform-note">💼 We'll guide you through creating a Slack App</div>
+                    <div id="note-Discord" class="platform-note">🎮 You'll need a Discord Bot Token from the Developer Portal</div>
+                </div>
+            </div>
+
+            <!-- Section 5: Your AI Assistant -->
+            <div class="form-section">
+                <h2>🤖 Your AI Assistant</h2>
+                <p class="section-desc">Help us personalize your assistant.</p>
+                <div class="field">
+                    <label for="use_case">Use Case *</label>
+                    <p class="hint">What do you want your AI assistant to help with? The more detail, the better we can configure it.</p>
+                    <textarea id="use_case" name="use_case" required placeholder="e.g. Customer support for my e-commerce store, personal productivity assistant, team knowledge base..."></textarea>
+                </div>
+                <div class="field">
+                    <label for="persona_name">Persona Name</label>
+                    <p class="hint">Give your AI a name, or we'll pick one</p>
+                    <input type="text" id="persona_name" name="persona_name" placeholder="e.g. Atlas, Nova, Max">
+                </div>
+                <div class="field">
+                    <label for="tone">Tone</label>
+                    <select id="tone" name="tone">
+                        <option value="Professional">Professional</option>
+                        <option value="Friendly" selected>Friendly</option>
+                        <option value="Casual">Casual</option>
+                        <option value="Technical">Technical</option>
+                        <option value="Custom">Custom</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="special_instructions">Any Special Instructions</label>
+                    <textarea id="special_instructions" name="special_instructions" placeholder="Anything else we should know about how you want your assistant to behave?"></textarea>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-primary" id="submit-btn">Submit & Start My Setup →</button>
+        </form>
+
+        <div class="success-message" id="success-message">
+            <div class="emoji">🎉</div>
+            <h2>We've got everything we need!</h2>
+            <p>Your setup will be completed within 48 hours. We'll email you at <span class="email-highlight" id="success-email"></span> when it's ready.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>Powered by <a href="https://paramo.sh" target="_blank" style="color: #2d8a6e;">Paramo.sh</a></p>
+            <p style="margin-top: 12px;"><a href="https://x.com/tipbtdennis" target="_blank" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: color 0.3s;"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> Follow on X</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // SSH auth toggle
+        document.querySelectorAll('input[name="ssh_auth"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                document.getElementById('ssh-password-field').classList.toggle('visible', this.value === 'password');
+                document.getElementById('ssh-key-field').classList.toggle('visible', this.value === 'key');
+            });
+        });
+
+        // Platform notes toggle
+        document.getElementById('platform').addEventListener('change', function() {
+            document.querySelectorAll('.platform-note').forEach(n => n.classList.remove('visible'));
+            const note = document.getElementById('note-' + this.value);
+            if (note) note.classList.add('visible');
+        });
+
+        // Form submission
+        document.getElementById('onboarding-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('submit-btn');
+            btn.disabled = true;
+            btn.textContent = 'Submitting...';
+
+            const formData = new FormData(this);
+            try {
+                const response = await fetch(this.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+                if (response.ok) {
+                    document.getElementById('success-email').textContent = formData.get('email');
+                    this.style.display = 'none';
+                    document.getElementById('success-message').classList.add('visible');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else {
+                    throw new Error('Submit failed');
+                }
+            } catch (err) {
+                btn.disabled = false;
+                btn.textContent = 'Submit & Start My Setup →';
+                alert('Something went wrong. Please try again or email us directly.');
+            }
+        });
+    </script>
+</body>
+</html>
