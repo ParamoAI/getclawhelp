@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17920782524"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17920782524');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenClaw Docker Setup: Step-by-Step Guide | GetClawHelp</title>
+    <meta name="description" content="Complete openclaw docker setup guide. Deploy OpenClaw in Docker containers with docker-compose for a portable, reproducible AI assistant deployment.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://getclawhelp.com/blog/openclaw-docker-setup/">
+    <meta property="og:title" content="OpenClaw Docker Setup: Step-by-Step Deployment Guide">
+    <meta property="og:description" content="Deploy OpenClaw in Docker containers with this step-by-step guide. Portable, reproducible, production-ready.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@tipbtdennis">
+    <link rel="canonical" href="https://getclawhelp.com/blog/openclaw-docker-setup/">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "OpenClaw Docker Setup: Step-by-Step Deployment Guide",
+      "description": "Complete openclaw docker setup guide. Deploy OpenClaw in Docker containers with docker-compose for a portable, reproducible AI assistant deployment.",
+      "datePublished": "2026-02-23",
+      "dateModified": "2026-02-23",
+      "author": {"@type": "Organization", "name": "GetClawHelp", "url": "https://getclawhelp.com"},
+      "publisher": {"@type": "Organization", "name": "GetClawHelp", "url": "https://getclawhelp.com"},
+      "mainEntityOfPage": "https://getclawhelp.com/blog/openclaw-docker-setup/"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can I run OpenClaw in Docker?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. OpenClaw runs well in Docker containers. You can use the official Node.js Docker image, install OpenClaw via npm, and manage it with docker-compose for easy deployment, updates, and portability."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the benefits of running OpenClaw in Docker vs bare metal?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Docker gives you isolated environments, easy rollbacks, portable configurations, and simpler updates. Bare metal is slightly lower overhead and simpler for single-purpose machines. For most users, Docker is the better choice for production deployments."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much RAM does OpenClaw need in Docker?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "OpenClaw itself typically uses 200–500MB of RAM. Allocate at least 1GB for the container to allow headroom for skills, browser automation, and spikes. A 2GB container handles most business workloads comfortably."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use docker-compose with OpenClaw?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, docker-compose is the recommended way to manage OpenClaw in Docker. It lets you define your configuration, volumes, and environment variables in a single YAML file for easy management and reproducibility."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I update OpenClaw in Docker?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Rebuild your Docker image with the latest OpenClaw version (npm install -g openclaw@latest in the Dockerfile), then run docker-compose up -d --build. Your data persists in mounted volumes, so updates are seamless."
+          }
+        }
+      ]
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-primary: #0a0a0a; --bg-secondary: #111111; --bg-card: #1a1a1a;
+            --text-primary: #ffffff; --text-secondary: #a0a0a0;
+            --accent: #ff6b4a; --accent-hover: #ff8266; --teal: #4ecdc4; --border: #2a2a2a;
+        }
+        body { font-family: 'Space Grotesk', -apple-system, sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.6; overflow-x: hidden; }
+        .bg-gradient { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(ellipse at 20% 20%, rgba(255,107,74,0.08) 0%, transparent 50%), radial-gradient(ellipse at 80% 80%, rgba(78,205,196,0.06) 0%, transparent 50%), var(--bg-primary); z-index: -1; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        nav { padding: 24px 0; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(10,10,10,0.9); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); z-index: 100; }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--text-primary); text-decoration: none; display: flex; align-items: center; gap: 8px; }
+        .logo-icon { font-size: 1.8rem; }
+        .nav-links { display: flex; align-items: center; gap: 32px; }
+        .nav-links a { color: var(--text-secondary); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--teal); }
+        .nav-links a.active { color: var(--text-primary); }
+
+        .article { max-width: 720px; margin: 0 auto; padding: 60px 24px 80px; }
+        .article-meta { font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 24px; }
+        .article-meta a { color: var(--teal); text-decoration: none; }
+        .article-meta a:hover { text-decoration: underline; }
+        .article h1 { font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 700; line-height: 1.15; margin-bottom: 32px; }
+        .article h2 { font-size: 1.5rem; font-weight: 600; margin: 40px 0 16px; padding-top: 16px; border-top: 1px solid var(--border); }
+        .article h3 { font-size: 1.2rem; font-weight: 600; margin: 28px 0 12px; }
+        .article p { font-size: 1.05rem; line-height: 1.75; color: var(--text-secondary); margin-bottom: 20px; }
+        .article ul, .article ol { margin: 0 0 20px 24px; color: var(--text-secondary); font-size: 1.05rem; line-height: 1.75; }
+        .article li { margin-bottom: 8px; }
+        .article strong { font-weight: 600; color: var(--text-primary); }
+        .article a { color: var(--teal); text-decoration: underline; text-underline-offset: 3px; }
+        .article a:hover { color: var(--accent); }
+        .article code { font-family: 'JetBrains Mono', monospace; background: var(--bg-card); border: 1px solid var(--border); border-radius: 4px; padding: 2px 6px; font-size: 0.9em; }
+        .article pre { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px; margin: 0 0 20px; overflow-x: auto; }
+        .article pre code { background: none; border: none; padding: 0; font-size: 0.9rem; line-height: 1.6; color: var(--teal); }
+
+        .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+        .feature-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+        .feature-item h4 { font-size: 1rem; font-weight: 600; margin-bottom: 8px; color: var(--text-primary); }
+        .feature-item p { font-size: 0.9rem; margin-bottom: 0; }
+
+        .cta-box { background: linear-gradient(135deg, rgba(255,107,74,0.08) 0%, rgba(78,205,196,0.08) 100%); border: 1px solid var(--accent); border-radius: 16px; padding: 36px; text-align: center; margin: 48px 0; }
+        .cta-box h3 { font-size: 1.3rem; margin-bottom: 12px; }
+        .cta-box p { color: var(--text-secondary); margin-bottom: 20px; }
+        .cta-btn { display: inline-flex; align-items: center; gap: 8px; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 1.05rem; color: #fff; background: linear-gradient(135deg, var(--accent) 0%, #ff8855 100%); padding: 14px 32px; border-radius: 12px; text-decoration: none; transition: all 0.3s; box-shadow: 0 4px 24px rgba(255,107,74,0.3); }
+        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(255,107,74,0.4); }
+
+        .related { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--border); }
+        .related h3 { font-size: 1.15rem; margin-bottom: 16px; }
+        .related a { display: block; color: var(--teal); text-decoration: none; padding: 8px 0; font-size: 0.95rem; transition: color 0.2s; }
+        .related a:hover { color: var(--accent); }
+
+        footer { padding: 40px 0; border-top: 1px solid var(--border); text-align: center; color: var(--text-secondary); font-size: 0.875rem; }
+        footer a { color: var(--accent); text-decoration: none; }
+
+        @media (max-width: 768px) {
+            .article { padding: 40px 16px 60px; }
+            .feature-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+    <nav>
+        <div class="container nav-content">
+            <a href="/" class="logo"><span class="logo-icon">🦞</span><span>Get Claw Help</span></a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/blog/" class="active">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <article class="article">
+        <div class="article-meta">February 23, 2026 · 13 min read · <a href="/blog/">← Back to Blog</a></div>
+        <h1>OpenClaw Docker Setup: Step-by-Step Deployment Guide</h1>
+
+        <p>Docker is the gold standard for deploying server applications cleanly and repeatably. If you want a portable, version-controlled, easy-to-update <strong>openclaw docker setup</strong>, this guide walks you through every step — from writing your Dockerfile to running a production-ready OpenClaw instance with docker-compose.</p>
+
+        <p>By the end, you'll have OpenClaw running in a Docker container with persistent data, automatic restarts, and connected messaging channels — ready for production use.</p>
+
+        <h2>Why Use Docker for OpenClaw?</h2>
+
+        <p>You can install OpenClaw directly on a server (bare metal), and it works great that way. So why bother with Docker? Here's what a containerized <strong>openclaw docker setup</strong> gives you:</p>
+
+        <div class="feature-grid">
+            <div class="feature-item">
+                <h4>📦 Isolation</h4>
+                <p>OpenClaw runs in its own container, separate from your host system. No dependency conflicts, no polluting your server's global npm.</p>
+            </div>
+            <div class="feature-item">
+                <h4>🔄 Easy Updates</h4>
+                <p>Update by rebuilding the image. Roll back by switching to the previous image. No worrying about breaking your server.</p>
+            </div>
+            <div class="feature-item">
+                <h4>📋 Reproducibility</h4>
+                <p>Your entire setup is defined in a Dockerfile and docker-compose.yml. Version control it, share it, deploy it anywhere identically.</p>
+            </div>
+            <div class="feature-item">
+                <h4>🚚 Portability</h4>
+                <p>Move from one server to another by copying your compose file and data volume. Works on any Linux host, any cloud provider.</p>
+            </div>
+        </div>
+
+        <h2>Prerequisites</h2>
+
+        <p>Before starting your <strong>openclaw docker setup</strong>, make sure you have:</p>
+
+        <ul>
+            <li><strong>A server or VPS</strong> — Ubuntu 22.04+ recommended. Even a $5/month VPS works. See our <a href="/blog/openclaw-vps-deployment/">VPS deployment guide</a> for provider recommendations.</li>
+            <li><strong>Docker installed</strong> — Version 24+ with Docker Compose V2</li>
+            <li><strong>An AI model API key</strong> — From <a href="https://console.anthropic.com/" target="_blank">Anthropic</a> (Claude) or <a href="https://platform.openai.com/" target="_blank">OpenAI</a> (GPT-4)</li>
+            <li><strong>Basic terminal skills</strong> — You'll be editing files and running commands</li>
+        </ul>
+
+        <h3>Installing Docker (if needed)</h3>
+
+        <p>If Docker isn't installed on your server yet, here's the quickest method for Ubuntu/Debian:</p>
+
+        <pre><code># Install Docker using the official convenience script
+curl -fsSL https://get.docker.com | sh
+
+# Add your user to the docker group (no sudo needed for docker commands)
+sudo usermod -aG docker $USER
+
+# Log out and back in, then verify
+docker --version
+docker compose version</code></pre>
+
+        <h2>Step 1: Create Your Project Directory</h2>
+
+        <p>Start by creating a dedicated directory for your OpenClaw Docker deployment:</p>
+
+        <pre><code>mkdir -p ~/openclaw-docker
+cd ~/openclaw-docker</code></pre>
+
+        <p>This directory will hold your Dockerfile, docker-compose configuration, and any workspace files.</p>
+
+        <h2>Step 2: Write the Dockerfile</h2>
+
+        <p>Create a <code>Dockerfile</code> that builds an OpenClaw-ready image:</p>
+
+        <pre><code># Dockerfile
+FROM node:22-slim
+
+# Install useful utilities
+RUN apt-get update && apt-get install -y \
+    curl \
+    git \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install OpenClaw globally
+RUN npm install -g openclaw@latest
+
+# Create workspace directory
+RUN mkdir -p /home/openclaw/workspace
+WORKDIR /home/openclaw/workspace
+
+# Expose the Web Control UI port
+EXPOSE 3000
+
+# Start the Gateway
+CMD ["openclaw", "gateway", "start", "--foreground"]</code></pre>
+
+        <p>Key decisions in this Dockerfile:</p>
+        <ul>
+            <li><strong>node:22-slim</strong> — Lightweight base image with Node.js 22 pre-installed</li>
+            <li><strong>openclaw@latest</strong> — Installs the latest version; pin a specific version for production stability</li>
+            <li><strong>--foreground</strong> — Runs the Gateway in the foreground so Docker manages the process lifecycle</li>
+        </ul>
+
+        <h2>Step 3: Create the Docker Compose File</h2>
+
+        <p>Docker Compose makes managing your container, volumes, and environment variables easy. Create a <code>docker-compose.yml</code>:</p>
+
+        <pre><code># docker-compose.yml
+version: '3.8'
+
+services:
+  openclaw:
+    build: .
+    container_name: openclaw-gateway
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      - openclaw-config:/root/.openclaw
+      - openclaw-workspace:/home/openclaw/workspace
+    environment:
+      - NODE_ENV=production
+    env_file:
+      - .env
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+
+volumes:
+  openclaw-config:
+  openclaw-workspace:</code></pre>
+
+        <p>What this does:</p>
+        <ul>
+            <li><strong>restart: unless-stopped</strong> — Container restarts automatically on crash or server reboot</li>
+            <li><strong>volumes</strong> — Persist OpenClaw's configuration and workspace data outside the container so updates don't wipe your data</li>
+            <li><strong>env_file</strong> — Loads environment variables from a <code>.env</code> file (your API keys)</li>
+            <li><strong>healthcheck</strong> — Docker monitors the Gateway and restarts it if it becomes unresponsive</li>
+        </ul>
+
+        <h2>Step 4: Configure Environment Variables</h2>
+
+        <p>Create a <code>.env</code> file for your API keys and configuration. <strong>Never commit this file to version control.</strong></p>
+
+        <pre><code># .env
+ANTHROPIC_API_KEY=sk-ant-your-key-here
+# Or for OpenAI:
+# OPENAI_API_KEY=sk-your-key-here</code></pre>
+
+        <p>Add <code>.env</code> to your <code>.gitignore</code> immediately:</p>
+
+        <pre><code>echo ".env" >> .gitignore</code></pre>
+
+        <h2>Step 5: Build and Start</h2>
+
+        <p>With everything in place, build your image and start the container:</p>
+
+        <pre><code># Build the Docker image
+docker compose build
+
+# Start OpenClaw in the background
+docker compose up -d
+
+# Check that it's running
+docker compose ps
+
+# View the logs
+docker compose logs -f openclaw</code></pre>
+
+        <p>You should see the OpenClaw Gateway starting up in the logs. Once it's ready, the Web Control UI is available at <code>http://your-server-ip:3000</code>.</p>
+
+        <h2>Step 6: Run the Onboarding Wizard</h2>
+
+        <p>For initial configuration, you'll need to run the OpenClaw onboarding wizard inside the container:</p>
+
+        <pre><code># Open an interactive shell in the running container
+docker compose exec openclaw bash
+
+# Run the onboarding wizard
+openclaw onboard
+
+# Exit the container shell when done
+exit</code></pre>
+
+        <p>The wizard will guide you through selecting your AI model, entering your API key, and configuring your agent. Since the configuration is stored in the <code>openclaw-config</code> volume, it persists across container restarts and rebuilds.</p>
+
+        <h2>Step 7: Connect Messaging Channels</h2>
+
+        <p>Connect your messaging platforms from inside the container:</p>
+
+        <pre><code># Connect WhatsApp
+docker compose exec openclaw openclaw channels login whatsapp
+
+# Connect Slack
+docker compose exec openclaw openclaw channels login slack
+
+# Connect Telegram
+docker compose exec openclaw openclaw channels login telegram</code></pre>
+
+        <p>For WhatsApp, the QR code displays in your terminal — scan it with your phone. For Slack and Discord, follow the OAuth flow or paste your bot token as prompted.</p>
+
+        <p>Channel credentials are stored in the config volume, so they survive container restarts. You won't need to re-scan the WhatsApp QR code every time you update.</p>
+
+        <h2>Managing Your Docker Deployment</h2>
+
+        <h3>Viewing Logs</h3>
+        <pre><code># Follow logs in real time
+docker compose logs -f openclaw
+
+# View the last 100 lines
+docker compose logs --tail 100 openclaw</code></pre>
+
+        <h3>Stopping and Starting</h3>
+        <pre><code># Stop OpenClaw (preserves data)
+docker compose stop
+
+# Start it back up
+docker compose start
+
+# Full restart
+docker compose restart</code></pre>
+
+        <h3>Updating OpenClaw</h3>
+        <p>When a new version of OpenClaw is released, updating your <strong>openclaw docker setup</strong> is straightforward:</p>
+
+        <pre><code># Rebuild the image with the latest version
+docker compose build --no-cache
+
+# Restart with the new image
+docker compose up -d
+
+# Verify the new version
+docker compose exec openclaw openclaw --version</code></pre>
+
+        <p>Your configuration and workspace data persist in Docker volumes, so updates are seamless. If something goes wrong, you can rebuild with a pinned version:</p>
+
+        <pre><code># In your Dockerfile, pin a specific version:
+RUN npm install -g openclaw@1.2.3</code></pre>
+
+        <h3>Backing Up Your Data</h3>
+        <p>Docker volumes hold your configuration and workspace. Back them up regularly:</p>
+
+        <pre><code># Create a backup of OpenClaw volumes
+docker run --rm \
+  -v openclaw-docker_openclaw-config:/data/config \
+  -v openclaw-docker_openclaw-workspace:/data/workspace \
+  -v $(pwd)/backups:/backup \
+  alpine tar czf /backup/openclaw-backup-$(date +%Y%m%d).tar.gz -C /data .</code></pre>
+
+        <p>To restore from a backup, reverse the process — extract the archive into the volumes.</p>
+
+        <h2>Advanced Configuration</h2>
+
+        <h3>Adding Browser Automation</h3>
+        <p>If your OpenClaw agent needs to browse the web (for research, scraping, etc.), add Chromium to your Dockerfile:</p>
+
+        <pre><code>FROM node:22-slim
+
+# Install Chromium for browser automation
+RUN apt-get update && apt-get install -y \
+    curl git chromium \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install OpenClaw and Playwright
+RUN npm install -g openclaw@latest
+RUN npx playwright install-deps
+
+RUN mkdir -p /home/openclaw/workspace
+WORKDIR /home/openclaw/workspace
+
+EXPOSE 3000
+CMD ["openclaw", "gateway", "start", "--foreground"]</code></pre>
+
+        <h3>Running Multiple Agents</h3>
+        <p>You can run multiple OpenClaw instances in separate containers — each with its own configuration, channels, and workspace. Just duplicate the service in your docker-compose.yml with different names and ports:</p>
+
+        <pre><code>services:
+  openclaw-main:
+    build: .
+    container_name: openclaw-main
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      - main-config:/root/.openclaw
+      - main-workspace:/home/openclaw/workspace
+    env_file: .env
+
+  openclaw-support:
+    build: .
+    container_name: openclaw-support
+    restart: unless-stopped
+    ports:
+      - "3001:3000"
+    volumes:
+      - support-config:/root/.openclaw
+      - support-workspace:/home/openclaw/workspace
+    env_file: .env-support</code></pre>
+
+        <h3>Adding a Reverse Proxy (Nginx)</h3>
+        <p>For production deployments with HTTPS, add Nginx as a reverse proxy in your compose stack:</p>
+
+        <pre><code>services:
+  openclaw:
+    build: .
+    container_name: openclaw-gateway
+    restart: unless-stopped
+    expose:
+      - "3000"
+    volumes:
+      - openclaw-config:/root/.openclaw
+      - openclaw-workspace:/home/openclaw/workspace
+    env_file: .env
+
+  nginx:
+    image: nginx:alpine
+    container_name: openclaw-nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./certs:/etc/nginx/certs
+    depends_on:
+      - openclaw</code></pre>
+
+        <p>This setup lets you serve the OpenClaw Web UI behind HTTPS with a proper domain name.</p>
+
+        <h2>Docker vs. Bare Metal: When to Use Each</h2>
+
+        <p>Both approaches work well for OpenClaw. Here's how to decide:</p>
+
+        <ul>
+            <li><strong>Choose Docker if:</strong> You manage multiple services on the same server, want clean updates and rollbacks, need reproducible deployments across environments, or are deploying for clients.</li>
+            <li><strong>Choose bare metal if:</strong> You're running OpenClaw on a dedicated machine (like a <a href="/blog/openclaw-mac-mini-setup/">Mac Mini</a>), want the simplest possible setup, or need maximum performance with zero overhead.</li>
+        </ul>
+
+        <p>For most production deployments on a VPS, Docker is the recommended approach. For personal use on dedicated hardware, bare metal is simpler.</p>
+
+        <h2>Troubleshooting</h2>
+
+        <h3>Container Keeps Restarting</h3>
+        <p>Check the logs for errors:</p>
+        <pre><code>docker compose logs --tail 50 openclaw</code></pre>
+        <p>Common causes: missing API key in <code>.env</code>, invalid configuration, or port 3000 already in use on the host.</p>
+
+        <h3>Can't Access Web UI</h3>
+        <p>Verify the container is running and the port is mapped:</p>
+        <pre><code>docker compose ps
+# Check that port 3000 is listed under PORTS</code></pre>
+        <p>If running on a VPS, ensure your firewall allows traffic on port 3000 (or use a reverse proxy on port 80/443).</p>
+
+        <h3>WhatsApp Session Lost After Rebuild</h3>
+        <p>Make sure your config volume is properly mounted. The WhatsApp session data is stored in <code>/root/.openclaw</code> — if that's not in a persistent volume, you'll need to re-scan the QR code after every rebuild.</p>
+
+        <h3>Out of Disk Space</h3>
+        <p>Docker images and build cache can accumulate. Clean up with:</p>
+        <pre><code># Remove unused images and build cache
+docker system prune -a</code></pre>
+
+        <div class="cta-box">
+            <h3>Need Help with Your Docker Deployment?</h3>
+            <p>Book a free 30-minute call and we'll set up your OpenClaw Docker environment together — tested and production-ready.</p>
+            <a href="https://calendly.com/d/cvcf-mw2-x4z/getclawhelp-setup-call-powered-by-paramo-sh" class="cta-btn">Book Your Free Setup Call →</a>
+        </div>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>Can I run OpenClaw in Docker?</h3>
+        <p>Yes. OpenClaw runs well in Docker containers. You can use the official Node.js Docker image, install OpenClaw via npm, and manage it with docker-compose for easy deployment, updates, and portability.</p>
+
+        <h3>What are the benefits of running OpenClaw in Docker vs bare metal?</h3>
+        <p>Docker gives you isolated environments, easy rollbacks, portable configurations, and simpler updates. Bare metal is slightly lower overhead and simpler for single-purpose machines. For most users, Docker is the better choice for production deployments.</p>
+
+        <h3>How much RAM does OpenClaw need in Docker?</h3>
+        <p>OpenClaw itself typically uses 200–500MB of RAM. Allocate at least 1GB for the container to allow headroom for skills, browser automation, and spikes. A 2GB container handles most business workloads comfortably.</p>
+
+        <h3>Can I use docker-compose with OpenClaw?</h3>
+        <p>Yes, docker-compose is the recommended way to manage OpenClaw in Docker. It lets you define your configuration, volumes, and environment variables in a single YAML file for easy management and reproducibility.</p>
+
+        <h3>How do I update OpenClaw in Docker?</h3>
+        <p>Rebuild your Docker image with the latest OpenClaw version (<code>npm install -g openclaw@latest</code> in the Dockerfile), then run <code>docker compose up -d --build</code>. Your data persists in mounted volumes, so updates are seamless.</p>
+
+        <div class="cta-box">
+            <h3>Ready to Containerize Your AI Assistant?</h3>
+            <p>Let's get OpenClaw running in Docker on your server. Book a free setup call and we'll do it together.</p>
+            <a href="https://calendly.com/d/cvcf-mw2-x4z/getclawhelp-setup-call-powered-by-paramo-sh" class="cta-btn">Schedule Your Free Call →</a>
+        </div>
+
+        <div class="related">
+            <h3>Related Posts</h3>
+            <a href="/blog/what-is-openclaw/">What is OpenClaw? The Complete Guide for Business Owners</a>
+            <a href="/blog/openclaw-mac-mini-setup/">How to Set Up OpenClaw on a Mac Mini: Complete Guide</a>
+            <a href="/blog/openclaw-vps-deployment/">Deploy OpenClaw on a VPS: AWS, DigitalOcean & Hetzner Guide</a>
+            <a href="/blog/openclaw-vps-setup-guide/">How to Set Up OpenClaw on a VPS: Complete 2026 Guide</a>
+            <a href="/blog/openclaw-small-business-automation/">OpenClaw for Small Business: 5 Ways to Save 20+ Hours a Week</a>
+        </div>
+    </article>
+
+    <footer>
+        <div class="container">
+            <p>Powered by <a href="https://paramo.sh" target="_blank" style="color: #2d8a6e;">Paramo.sh</a></p>
+        </div>
+    </footer>
+</body>
+</html>
