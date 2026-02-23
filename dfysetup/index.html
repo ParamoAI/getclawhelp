@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17920782524"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17920782524');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Done-For-You OpenClaw Setup — Live in 24 Hours | GetClawHelp</title>
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://getclawhelp.com/dfysetup/">
+    <meta property="og:title" content="Done-For-You OpenClaw Setup — Live in 24 Hours | GetClawHelp">
+    <meta property="og:description" content="We handle everything — installation, configuration, and deployment. Your AI assistant, set up and running in 24 hours. One-time $247.">
+    <meta property="og:image" content="https://getclawhelp.com/og-image.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Done-For-You OpenClaw Setup — Live in 24 Hours | GetClawHelp">
+    <meta name="twitter:description" content="We handle everything — installation, configuration, and deployment. Your AI assistant, set up and running in 24 hours. One-time $247.">
+    <meta name="twitter:image" content="https://getclawhelp.com/og-image.png">
+    <meta name="twitter:site" content="@tipbtdennis">
+
+    <!-- General Meta -->
+    <meta name="description" content="Done-For-You OpenClaw setup. We install, configure, and deploy your AI assistant on your VPS in 24 hours. One-time payment of $247. No subscription.">
+    <meta name="keywords" content="OpenClaw setup service, done for you OpenClaw, OpenClaw installation, OpenClaw VPS setup, AI assistant setup, OpenClaw configuration service">
+    <link rel="canonical" href="https://getclawhelp.com/dfysetup/">
+
+    <!-- Structured Data: Service -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Done-For-You OpenClaw Setup",
+      "provider": {
+        "@type": "Organization",
+        "name": "GetClawHelp",
+        "url": "https://getclawhelp.com"
+      },
+      "name": "Done-For-You OpenClaw Setup",
+      "description": "We install, configure, and deploy OpenClaw on your VPS in 24 hours. Includes LLM connection, messaging channel setup, custom persona, security hardening, walkthrough call, and 7 days of support.",
+      "url": "https://getclawhelp.com/dfysetup/",
+      "offers": {
+        "@type": "Offer",
+        "price": "247",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+    </script>
+
+    <!-- Structured Data: FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What do I need to provide?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Just your VPS credentials (we can help you get one), your LLM API key, and which messaging platform you want connected. Our onboarding form walks you through everything."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does setup take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most setups are completed within 24 hours of receiving your onboarding form."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if I buy now but I'm not ready yet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No problem! Your setup doesn't expire. Submit your onboarding form whenever you're ready and we'll get started."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I add more channels or features later?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely. We offer custom add-ons and advanced configurations. Just reach out after your initial setup."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a refund policy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If we can't complete your setup for any reason, you get a full refund. No questions asked."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Structured Data: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://getclawhelp.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "DFY Setup",
+          "item": "https://getclawhelp.com/dfysetup/"
+        }
+      ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #111111;
+            --bg-card: #1a1a1a;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --accent: #ff6b4a;
+            --accent-hover: #ff8266;
+            --teal: #4ecdc4;
+            --border: #2a2a2a;
+        }
+
+        body {
+            font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .bg-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(ellipse at 20% 20%, rgba(255, 107, 74, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(78, 205, 196, 0.06) 0%, transparent 50%),
+                var(--bg-primary);
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 24px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo-icon {
+            font-size: 1.8rem;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--teal);
+        }
+
+        .nav-links a.active {
+            color: var(--text-primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0 80px;
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(78, 205, 196, 0.1);
+            border: 1px solid rgba(78, 205, 196, 0.3);
+            color: var(--teal);
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 32px;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            animation: fadeInUp 0.6s ease-out 0.1s backwards;
+        }
+
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, var(--teal) 0%, #2dd4bf 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 40px;
+            animation: fadeInUp 0.6s ease-out 0.2s backwards;
+        }
+
+        /* Price Block */
+        .price-block {
+            margin: 0 auto 32px;
+            animation: fadeInUp 0.6s ease-out 0.25s backwards;
+        }
+
+        .price-original {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            text-decoration: line-through;
+            margin-right: 12px;
+        }
+
+        .price-current {
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--teal) 0%, #2dd4bf 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .cta-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            animation: fadeInUp 0.6s ease-out 0.3s backwards;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--accent) 0%, #ff8855 100%);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 12px;
+            font-size: 1.125rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 24px rgba(255, 107, 74, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(255, 107, 74, 0.4);
+        }
+
+        .cta-note {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+        }
+
+        .section-label {
+            text-align: center;
+            color: var(--teal);
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            margin-bottom: 60px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: rgba(255, 107, 74, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 107, 74, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            padding: 80px 0;
+            background: var(--bg-secondary);
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--accent) 0%, #ff8855 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 24px;
+        }
+
+        .step h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+        }
+
+        .step p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: 12px;
+            overflow: hidden;
+            background: var(--bg-card);
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-family: inherit;
+            font-size: 1.05rem;
+            font-weight: 600;
+            padding: 20px 24px;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: color 0.2s ease;
+        }
+
+        .faq-question:hover {
+            color: var(--teal);
+        }
+
+        .faq-chevron {
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+            margin-left: 16px;
+        }
+
+        .faq-item.open .faq-chevron {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer-inner {
+            padding: 0 24px 20px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 200px;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            padding: 100px 0;
+            text-align: center;
+            background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+        }
+
+        .final-cta h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 24px;
+        }
+
+        .final-cta p {
+            color: var(--text-secondary);
+            font-size: 1.125rem;
+            margin-bottom: 40px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 0 50px;
+            }
+
+            .features, .how-it-works, .faq {
+                padding: 60px 0;
+            }
+
+            .btn-primary {
+                padding: 16px 32px;
+                font-size: 1rem;
+            }
+
+            .price-current {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                gap: 16px;
+            }
+
+            .nav-links a {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-content">
+            <a href="/" class="logo">
+                <span class="logo-icon">🦞</span>
+                <span>Get Claw Help</span>
+            </a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/consult/">Custom Solutions</a>
+                <a href="/dfysetup/" class="active">DFY Setup</a>
+                <a href="/blog/">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="badge">🔥 Launch Special — 65% Off (First 50 Customers Only)</div>
+            <h1>Your AI Assistant, Set Up and Running in <span class="highlight">24 Hours</span></h1>
+            <p class="hero-subtitle">We handle everything — installation, configuration, and deployment. You just submit your details and we do the rest.</p>
+            <div class="price-block">
+                <span class="price-original">$697</span>
+                <span class="price-current">$247</span>
+            </div>
+            <div class="cta-group">
+                <a href="#checkout" class="btn-primary">
+                    Claim Your Setup →
+                </a>
+                <p class="cta-note">One-time payment. No subscription. No hidden fees.</p>
+                <p style="color: var(--accent); font-size: 0.85rem; margin-top: 8px; font-weight: 500;">⚡ We're keeping this low while we build case studies. It won't last.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You Get -->
+    <section class="features">
+        <div class="container">
+            <p class="section-label">What You Get</p>
+            <h2 class="section-title">Everything you need to go live</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🖥️</div>
+                    <h3>Full VPS Installation</h3>
+                    <p>Complete OpenClaw installation and configuration on your VPS — production-ready from day one.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3>Your Preferred LLM Connected</h3>
+                    <p>We connect Claude, GPT, Gemini, or whichever model you prefer. Fully configured and tested.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3>1 Messaging Channel</h3>
+                    <p>WhatsApp, Telegram, Slack, or Discord — pick your platform and we'll set it up for you.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎭</div>
+                    <h3>Custom AI Persona</h3>
+                    <p>A tailored persona that matches your use case — tone, behavior, and instructions dialed in.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Security Hardening</h3>
+                    <p>Best-practice security configuration so your instance is locked down and safe from day one.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📞</div>
+                    <h3>30-Min Walkthrough Call</h3>
+                    <p>A live call after setup to walk you through everything — so you know exactly how to use it.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛟</div>
+                    <h3>7 Days of Support</h3>
+                    <p>Post-setup support for a full week. Questions, tweaks, troubleshooting — we've got you covered.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <p class="section-label">How It Works</p>
+            <h2 class="section-title">3 simple steps to go live</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Pay & Submit Your Details</h3>
+                    <p>Complete checkout and fill out a quick onboarding form with your preferences and API keys.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>We Build Your Setup</h3>
+                    <p>Our team configures your OpenClaw instance exactly to your specs. Usually done within 24 hours.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Go Live</h3>
+                    <p>Hop on a 30-min walkthrough call, then start automating. We're here for 7 days if you need anything.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <p class="section-label">FAQ</p>
+            <h2 class="section-title">Common questions</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        What do I need to provide?
+                        <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Just your VPS credentials (we can help you get one), your LLM API key, and which messaging platform you want connected. Our onboarding form walks you through everything.</div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        How long does setup take?
+                        <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Most setups are completed within 24 hours of receiving your onboarding form.</div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        What if I buy now but I'm not ready yet?
+                        <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">No problem! Your setup doesn't expire. Submit your onboarding form whenever you're ready and we'll get started.</div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Can I add more channels or features later?
+                        <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Absolutely. We offer custom add-ons and advanced configurations. Just reach out after your initial setup.</div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Is there a refund policy?
+                        <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">If we can't complete your setup for any reason, you get a full refund. No questions asked.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta" id="checkout">
+        <div class="container">
+            <h2>Ready to get <span style="background: linear-gradient(135deg, #4ecdc4, #2dd4bf); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">started</span>?</h2>
+            <div class="price-block" style="margin-bottom: 32px;">
+                <span class="price-original">$697</span>
+                <span class="price-current">$247</span>
+            </div>
+            <a href="#checkout" class="btn-primary">
+                Claim Your Setup →
+            </a>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 16px;">One-time payment. Price increases after launch period.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>Powered by <a href="https://paramo.sh" target="_blank" style="color: #2d8a6e;">Paramo.sh</a></p>
+            <p style="margin-top: 12px;"><a href="https://x.com/tipbtdennis" target="_blank" style="color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: color 0.3s;"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> Follow on X</a></p>
+        </div>
+    </footer>
+</body>
+</html>
