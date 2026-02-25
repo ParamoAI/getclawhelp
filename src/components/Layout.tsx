@@ -1,11 +1,11 @@
 import Head from 'next/head';
+import { GoogleAnalytics } from '@hacktoolkit/nextjs-htk';
 
-import { BUSINESS, SEO } from '@/config';
+import { ANALYTICS, BUSINESS, SEO } from '@/config';
 
 import styles from '@/styles/Layout.module.css';
 
 import Footer from './Footer';
-import GoogleAnalytics from './GoogleAnalytics';
 import Header from './Header';
 
 interface LayoutProps {
@@ -45,7 +45,7 @@ export default function Layout({
         <meta name="twitter:image" content={SEO.og.image} />
         <meta name="twitter:site" content={SEO.og.twitter.site} />
       </Head>
-      <GoogleAnalytics />
+      <GoogleAnalytics measurementId={ANALYTICS.google.measurementId} />
       <div className={styles.bgGradient} />
       <div className={styles.layout}>
         <Header />
