@@ -1,0 +1,174 @@
+.article {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 60px 24px 80px;
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 32px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.back:hover {
+  color: var(--teal);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 0.9rem;
+  color: var(--teal);
+  margin-bottom: 24px;
+}
+
+.article h1 {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 32px;
+}
+
+.lead {
+  font-size: 1.15rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+}
+
+.article h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 40px 0 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.article h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 28px 0 12px;
+}
+
+.article p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.article ul,
+.article ol {
+  margin: 0 0 20px 24px;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.article li {
+  margin-bottom: 8px;
+}
+
+.article strong {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.article a {
+  color: var(--teal);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.article a:hover {
+  color: var(--accent);
+}
+
+.painPoints {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 32px;
+}
+
+.painPoints h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: var(--accent);
+}
+
+.painPoints ul {
+  margin-bottom: 0;
+}
+
+.solutionCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+
+.solutionCard h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: var(--teal);
+}
+
+.solutionCard p {
+  margin-bottom: 0;
+}
+
+.ctaBox {
+  background: linear-gradient(135deg, rgba(255, 107, 74, 0.08) 0%, rgba(78, 205, 196, 0.08) 100%);
+  border: 1px solid var(--accent);
+  border-radius: 16px;
+  padding: 36px;
+  text-align: center;
+  margin: 48px 0;
+}
+
+.ctaBox h3 {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+}
+
+.ctaBox p {
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent) 0%, #ff8855 100%);
+  padding: 14px 32px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s;
+  box-shadow: 0 4px 24px rgba(255, 107, 74, 0.3);
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(255, 107, 74, 0.4);
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .article {
+    padding: 40px 16px 60px;
+  }
+}
