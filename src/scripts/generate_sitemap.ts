@@ -3,6 +3,9 @@ import * as path from 'path';
 
 import { SITEMAP } from '../config/sitemap';
 import { BLOG_POSTS } from '../config/blogPosts';
+import { CITIES } from '../config/cities';
+import { INTEGRATIONS } from '../config/integrations';
+import { USE_CASES } from '../config/useCases';
 
 const BUILD_DIR = 'docs';
 
@@ -23,25 +26,47 @@ const staticPages: SitemapUrl[] = [
 
 function generateSitemap(): void {
   const today = new Date().toISOString().split('T')[0];
-  
+
   const urls: SitemapUrl[] = [
-    ...staticPages.map(page => ({ ...page, lastmod: today })),
-    ...BLOG_POSTS.map(post => ({
+    ...staticPages.map((page) => ({ ...page, lastmod: today })),
+    ...BLOG_POSTS.map((post) => ({
       loc: `/blog/${post.slug}/`,
       lastmod: today,
       changefreq: 'monthly',
       priority: '0.7',
     })),
+    ...CITIES.map((city) => ({
+      loc: `/cities/${city.slug}/`,
+      lastmod: today,
+      changefreq: 'monthly',
+      priority: '0.6',
+    })),
+    ...INTEGRATIONS.map((integration) => ({
+      loc: `/integrations/${integration.slug}/`,
+      lastmod: today,
+      changefreq: 'monthly',
+      priority: '0.6',
+    })),
+    ...USE_CASES.map((useCase) => ({
+      loc: `/use-cases/${useCase.slug}/`,
+      lastmod: today,
+      changefreq: 'monthly',
+      priority: '0.6',
+    })),
   ];
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls.map(url => `  <url>
+${urls
+  .map(
+    (url) => `  <url>
     <loc>${SITEMAP.baseUrl}${url.loc}</loc>
     ${url.lastmod ? `<lastmod>${url.lastmod}</lastmod>` : ''}
     ${url.changefreq ? `<changefreq>${url.changefreq}</changefreq>` : ''}
     ${url.priority ? `<priority>${url.priority}</priority>` : ''}
-  </url>`).join('\n')}
+  </url>`
+  )
+  .join('\n')}
 </urlset>`;
 
   const outputPath = path.join(BUILD_DIR, 'sitemap.xml');
