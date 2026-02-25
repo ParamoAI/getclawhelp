@@ -1,0 +1,40 @@
+# GetClawHelp.com
+
+> Professional OpenClaw setup, deployment, and automation services. We install and configure OpenClaw AI agents for business owners — no coding required.
+
+## What We Do
+
+GetClawHelp provides done-for-you OpenClaw implementation:
+- Full OpenClaw setup on VPS (runs 24/7)
+- Messenger integration (WhatsApp, Telegram, Signal, Discord, Slack)
+- Custom AI agent configuration with pre-installed skills
+- Workflow automation and migration assistance
+- Ongoing maintenance and support
+
+## Who We Help
+
+- Small business owners who want AI automation without technical complexity
+- Entrepreneurs looking to deploy AI agents for customer support, sales, content, and operations
+- Anyone who wants OpenClaw running but doesn't want to manage servers
+
+## Key Pages
+
+- [Home](https://getclawhelp.com/) — Overview of services and how it works
+- [Blog](https://getclawhelp.com/blog/) — Guides, tutorials, and comparisons for OpenClaw users
+
+## Blog Articles
+
+- [How to Set Up OpenClaw on a VPS](https://getclawhelp.com/blog/openclaw-vps-setup-guide/) — Step-by-step VPS deployment guide
+- [OpenClaw vs ChatGPT](https://getclawhelp.com/blog/openclaw-vs-chatgpt/) — Comparison of OpenClaw and ChatGPT for business use
+- [Automate Customer Support with AI](https://getclawhelp.com/blog/automate-customer-support-ai/) — Using OpenClaw for support automation
+- [OpenClaw Small Business Automation](https://getclawhelp.com/blog/openclaw-small-business-automation/) — Automation ideas for small businesses
+- [AI Sales Assistant with OpenClaw](https://getclawhelp.com/blog/ai-sales-assistant-openclaw/) — Building AI-powered sales workflows
+- [OpenClaw Automation Ideas](https://getclawhelp.com/blog/openclaw-automation-ideas/) — Creative automation use cases
+
+## About
+
+GetClawHelp is operated by Páramo AI (https://paramo.sh), an AI-native implementation studio. We show businesses what's possible with AI agents, then we build it for them.
+
+## Contact
+
+Book a free discovery call: https://calendly.com/d/cvcf-mw2-x4z/getclawhelp-setup-call-powered-by-paramo-sh
