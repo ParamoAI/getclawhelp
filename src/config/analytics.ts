@@ -5,4 +5,7 @@ export const ANALYTICS = {
     // GA4 analytics
     ga4MeasurementId: 'G-Y3LQF1T7EX',
   },
+  meta: {
+    pixelId: '1275259234564588',
+  },
 } as const;
