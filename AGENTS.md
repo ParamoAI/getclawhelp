@@ -20,14 +20,14 @@ If you accidentally commit sensitive data, alert the maintainer immediately. The
 
 1. **GitHub Pages** hosts the production site at [getclawhelp.com](https://getclawhelp.com)
 2. The `docs/` directory contains the static build output
-3. **Any push to `master` automatically deploys to production**
-4. There is no staging environment - master IS production
+3. **Any push to `main` automatically deploys to production**
+4. There is no staging environment - main IS production
 
 ### The Golden Rule
 
-> **Never push directly to `master` without explicit approval.**
+> **Never push directly to `main` without explicit approval.**
 
-Changes pushed to master go live immediately. This includes:
+Changes pushed to main go live immediately. This includes:
 
 - Source code changes (`src/`)
 - Build artifacts (`docs/`)
@@ -43,14 +43,14 @@ Changes pushed to master go live immediately. This includes:
 2. Make changes to source files in `src/`
 3. Test locally with `npm run dev`
 4. Build with `make build` to verify the build succeeds
-5. **Do NOT push to master** - create a PR for review
+5. **Do NOT push to main** - create a PR for review
 
 ### For Production Deployment
 
 1. Get explicit approval from the maintainer
-2. Merge the approved PR to master
+2. Merge the approved PR to main
 3. Run `make deploy` to build and stage the deployment
-4. Push to master - GitHub Pages automatically deploys the `docs/` folder
+4. Push to main - GitHub Pages automatically deploys the `docs/` folder
 
 ### Build Commands
 
@@ -77,7 +77,7 @@ npm run lint     # Check for errors
 - Commit `.env` files or any secrets
 - Hardcode API keys, tokens, or passwords
 - Include internal business data in code or comments
-- Push directly to master without approval
+- Push directly to main without approval
 
 ---
 
@@ -107,7 +107,7 @@ getclawhelp.com/
 Before making any changes:
 
 1. [ ] Is this a public repo? (Yes - don't include secrets)
-2. [ ] Am I on a feature branch? (Don't work on master)
+2. [ ] Am I on a feature branch? (Don't work on main)
 3. [ ] Am I editing files in `src/`, not `docs/`?
 4. [ ] Do I have explicit approval to deploy?
 
@@ -115,13 +115,13 @@ Before pushing:
 
 1. [ ] Run `npm run lint` - no errors?
 2. [ ] Run `make build` - build succeeds?
-3. [ ] Is this going to master? (If yes, STOP - need approval)
+3. [ ] Is this going to main? (If yes, STOP - need approval)
 
 After approval to deploy:
 
 1. [ ] Run `make deploy` to build and stage
 2. [ ] Review the staged changes
-3. [ ] Push to master
+3. [ ] Push to main
 
 ---
 
