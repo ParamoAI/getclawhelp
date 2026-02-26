@@ -46,6 +46,7 @@ export default function Layout({
         <meta name="twitter:site" content={SEO.og.twitter.site} />
       </Head>
       <GoogleAnalytics measurementId={ANALYTICS.google.measurementId} />
+      <GoogleAnalytics measurementId={ANALYTICS.google.ga4MeasurementId} />
       <div className={styles.bgGradient} />
       <div className={styles.layout}>
         <Header />
