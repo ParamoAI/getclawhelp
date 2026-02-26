@@ -1,25 +1,24 @@
 import type { AppProps } from 'next/app';
 import { useEffect } from 'react';
 
-import '@/styles/globals.css';
+import { trackMetaEvent } from '@hacktoolkit/nextjs-htk';
 
-declare global {
-  interface Window {
-    fbq?: (...args: unknown[]) => void;
-  }
-}
+import '@/styles/globals.css';
 
 export default function App({ Component, pageProps }: AppProps) {
   // Fire Meta Pixel "Lead" event on Calendly link clicks
   useEffect(() => {
-    const handler = (e: MouseEvent) => {
+    const handler = () => {
+      trackMetaEvent('Lead');
+    };
+    const clickHandler = (e: MouseEvent) => {
       const anchor = (e.target as HTMLElement).closest?.('a[href*="calendly.com"]');
-      if (anchor && window.fbq) {
-        window.fbq('track', 'Lead');
+      if (anchor) {
+        handler();
       }
     };
-    document.addEventListener('click', handler);
-    return () => document.removeEventListener('click', handler);
+    document.addEventListener('click', clickHandler);
+    return () => document.removeEventListener('click', clickHandler);
   }, []);
 
   return <Component {...pageProps} />;

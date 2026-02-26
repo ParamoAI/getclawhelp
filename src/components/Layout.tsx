@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { GoogleAnalytics } from '@hacktoolkit/nextjs-htk';
+import { GoogleAnalytics, MetaPixel } from '@hacktoolkit/nextjs-htk';
 
 import { ANALYTICS, BUSINESS, SEO } from '@/config';
 
@@ -47,6 +47,7 @@ export default function Layout({
       </Head>
       <GoogleAnalytics measurementId={ANALYTICS.google.measurementId} />
       <GoogleAnalytics measurementId={ANALYTICS.google.ga4MeasurementId} />
+      <MetaPixel pixelId={ANALYTICS.meta.pixelId} />
       <div className={styles.bgGradient} />
       <div className={styles.layout}>
         <Header />
